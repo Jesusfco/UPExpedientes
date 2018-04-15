@@ -39,26 +39,26 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>Crear Alergia</h2>
+                <h2>Crear Auxiliar Diagnóstico</h2>
 
                 <form method="POST" action="">
 
                 
 
-                <label>ID USUARIO PACIENTE</label><br>
+                <label>ID USUARIO</label><br>
                 <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
-                <label>TIPO DE REACCION</label><br>
-                <input type="text" name="tipo_reaccion"><br>
+                <label>TIPO DE ESTUDIO</label><br>
+                <input type="text" name="tipo_estudio"><br>
 
-                <label>DESCRIPCION</label><br>
-                <textarea name="descripcion"></textarea><BR>
+                <label>DIAGNÓSTICO RELACIÓN</label><br>
+                <textarea name="diagno_relacion"></textarea><BR>
 
-                <label>MEDICAMENTO</label><br>
-                <input type="text" name="medicamento"><br>
+                <label>URGENCIA</label><br>
+                <input type="text" name="urgencia"><br>
 
-                <label>FECHA DE DETECCION</label><br>
-                <input type="date" name="fec_deteccion"><br>                                
+                <label>INDICACIONES</label><br>
+                <textarea name="indicaciones"></textarea><BR>                                
 
                 <input type="submit" name="submit" placeholder="CREAR datos">
             </form>

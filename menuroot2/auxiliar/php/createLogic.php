@@ -1,9 +1,10 @@
 <?php
 
-$sql = "INSERT INTO `alergias` (`id`, `user_id`, `tipo_reaccion`, `descripcion`, `medicamento`, `fec_deteccion`, `created_at`) 
-VALUES (NULL, '" . $_POST['user_id'] ."', '" . $_POST['tipo_reaccion'] ."', '" . $_POST['descripcion'] ."', 
-'" . $_POST['medicamento'] ."', '" . $_POST['fec_deteccion'] ."', CURRENT_TIMESTAMP)";
+$sql = "INSERT INTO `auxiliar_diagnostico` (`id`, `user_id`, `tipo_estudio`, `diagno_relacion`, `urgencia`,
+ `indicaciones`, `created_at`) 
+VALUES (NULL, '" . $_POST['user_id'] ."', '" . $_POST['tipo_estudio'] ."', '" . $_POST['diagno_relacion'] ."', 
+'" . $_POST['urgencia'] ."', '" . $_POST['indicaciones'] ."', CURRENT_TIMESTAMP)";
 
 $conn->query($sql);
 
-echo 'ALERGIA CREADA <BR>';
+echo 'AUXILIAR DIAGNÓSTICO CREADO <BR>';

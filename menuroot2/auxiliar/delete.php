@@ -8,7 +8,7 @@
         
     $id = $_GET['id'];
 
-    $sql = "DELETE FROM alergias WHERE id = '" . $id . "' ";
+    $sql = "DELETE FROM auxiliar_diagnostico WHERE id = '" . $id . "' ";
 
     $conn->query($sql);
 

@@ -30,7 +30,7 @@
 
                 $id = $_GET['id'];                
 
-                $sql = "SELECT * FROM alergias WHERE id = '" . $id . "' ";
+                $sql = "SELECT * FROM auxiliar_diagnostico WHERE id = '" . $id . "' ";
                 $res = $conn->query($sql);
                 $obj = $res->fetch_object();
                 
@@ -38,24 +38,24 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>ALERGIA # <?php echo $obj->id; ?> </h2>
+                <h2>AUXILIAR DIAGNOSTICO # <?php echo $obj->id; ?> </h2>
             
                     <h5>ID USUARIO PACIENTE</h5>
                     <p><?php echo $obj->user_id; ?></p>
 
-                    <h5>TIPO DE MUESTRA</h5>
-                    <p><?php echo $obj->tipo_reaccion; ?></p>
+                    <h5>TIPO DE ESTUDIO</h5>
+                    <p><?php echo $obj->tipo_estudio; ?></p>
 
-                    <h5>NUMERO DE MUESTRAS</h5>
-                    <p><?php echo $obj->descripcion; ?></p>
+                    <h5>DIAGNOSTICO RELACIÓN</h5>
+                    <p><?php echo $obj->diagno_relacion; ?></p>
 
-                    <h5>FECHA DE RECOLECCION</label>
-                    <p><?php echo $obj->medicamento; ?></p>
+                    <h5>URGENCIA</label>
+                    <p><?php echo $obj->urgencia; ?></p>
 
-                    <h5>FECHA DE ENTREGA</h5>
-                    <p><?php echo $obj->fec_deteccion; ?></p>       
+                    <h5>INDICACIONES</h5>
+                    <p><?php echo $obj->indicaciones; ?></p>       
 
-                    <h5>Registro creado el:</h5>
+                    <h5>REGISTRO CREADO EL:</h5>
                     <p><?php echo $obj->created_at; ?></p>                               
         
             </div>

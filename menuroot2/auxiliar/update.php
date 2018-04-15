@@ -34,7 +34,7 @@
                     include 'php/updateLogic.php';                    
                 } 
 
-                $sql = "SELECT * FROM alergias WHERE id = '" . $id . "' ";
+                $sql = "SELECT * FROM auxiliar_diagnostico WHERE id = '" . $id . "' ";
                 $res = $conn->query($sql);
                 $obj = $res->fetch_object();
                 
@@ -42,24 +42,24 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>ACTUALIZAR ALERGIA</h2>
+                <h2>ACTUALIZAR AUXILIAR DIAGNÓSTICO</h2>
 
                 <form method="POST" action="">
 
                     <label>ID USUARIO PACIENTE</label><br>
                     <input type="number" name="user_id" value="<?php echo $obj->user_id; ?>" disabled><br>
 
-                    <label>TIPO DE REACCION</label><br>
-                    <input type="text" name="tipo_reaccion" value="<?php echo $obj->tipo_reaccion; ?>"><br>
+                    <label>TIPO DE ESTUDIO</label><br>
+                    <input type="text" name="tipo_estudio" value="<?php echo $obj->tipo_estudio; ?>"><br>
 
-                    <label>DESCRIPCION</label><br>
-                    <textarea name="descripcion"><?php echo $obj->descripcion; ?></textarea><BR>
+                    <label>DIAGNÓSTICO RELACIÓN</label><br>
+                    <textarea name="diagno_relacion"><?php echo $obj->diagno_relacion; ?></textarea><BR>
 
-                    <label>MEDICAMENTO</label><br>
-                    <input type="text" name="medicamento" value="<?php echo $obj->medicamento; ?>"><br>
+                    <label>URGENCIA</label><br>
+                    <input type="text" name="urgencia" value="<?php echo $obj->urgencia; ?>"><br>
 
-                    <label>FECHA DE DETECCION</label><br>
-                    <input type="date" name="fec_deteccion" value="<?php echo $obj->fec_deteccion; ?>"><br>                                
+                    <label>INDICACIONES</label><br>
+                    <textarea name="indicaciones"><?php echo $obj->indicaciones; ?></textarea><BR>                                
 
                     <input type="submit" name="submit" placeholder="CREAR datos">
                     

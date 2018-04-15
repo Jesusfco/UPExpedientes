@@ -31,13 +31,13 @@
     include "../php/sql.php";
 
 
-    $sql = $query = "SELECT * FROM alergias";
+    $sql = $query = "SELECT * FROM auxiliar_diagnostico";
 
     if(isset($_POST['search']))
-        $sql = $query = "SELECT * FROM alergias WHERE user_id = " . $_POST['search'];
+        $sql = $query = "SELECT * FROM auxiliar_diagnostico WHERE user_id = " . $_POST['search'];
 
     else if(isset($_GET['userid']))
-        $sql = $query = "SELECT * FROM alergias WHERE user_id = " . $_GET['userid'];
+        $sql = $query = "SELECT * FROM auxiliar_diagnostico WHERE user_id = " . $_GET['userid'];
        
         $res = $conn->query($sql);
     
@@ -46,8 +46,8 @@
 
 <div class="contenedorPrincipal">
 
-<h1>Alergias </h1>
-<a href="create.php">Crear Alergia</a>
+<h1>Auxiliar Dianostico</h1>
+<a href="create.php">Crear Auxiliar Diagnostico</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
@@ -56,9 +56,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Usuario </th>                
-                <th>Tipo de Reaccion</th>
-                <th>Fecha de Detección</th>                
+                <th>PACIENTE </th>                
+                <th>Tipo de Estudio</th>
+                <th>Urgencia</th>                
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -72,8 +72,8 @@
                 <tr>
                     <td>". $obj->id   ."</td>
                     <td>". $obj->user_id   ."</td>
-                    <td>". $obj->tipo_reaccion   ."</td>
-                    <td>". $obj->fec_deteccion   ."</td>                
+                    <td>". $obj->tipo_estudio   ."</td>
+                    <td>". $obj->urgencia   ."</td>                
                     <td>
                         <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                         <a href='show.php?id=". $obj->id ."'>VER</a><br>

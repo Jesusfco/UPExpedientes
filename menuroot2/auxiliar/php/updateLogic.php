@@ -1,14 +1,14 @@
 <?php 
 
-$sql = "UPDATE `alergias` SET 
-        `tipo_reaccion` = '" . $_POST['tipo_reaccion'] . "', 
-        `descripcion` = '" . $_POST['descripcion'] . "', 
-        `medicamento` = '" . $_POST['medicamento'] . "', 
-        `fec_deteccion` = '" . $_POST['fec_deteccion'] . "'
-        WHERE `alergias`.`id` = '" . $_GET['id'] . "'";
+$sql = "UPDATE `auxiliar_diagnostico` SET 
+        `tipo_estudio` = '" . $_POST['tipo_estudio'] . "', 
+        `diagno_relacion` = '" . $_POST['diagno_relacion'] . "', 
+        `urgencia` = '" . $_POST['urgencia'] . "', 
+        `indicaciones` = '" . $_POST['indicaciones'] . "'
+        WHERE `auxiliar_diagnostico`.`id` = '" . $_GET['id'] . "'";
 
        
 
     $conn->query($sql);
     
-    echo " <br> ALERGIA ACTUALIZADA correctamente <br>"; 
+    echo " <br> AUXILIAR DIAGNÓSTICO ACTUALIZADA correctamente <br>"; 
