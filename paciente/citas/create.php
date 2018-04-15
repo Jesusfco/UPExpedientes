@@ -44,8 +44,8 @@
 
                 
 
-                    <label>ID USUARIO PACIENTE</label><br>
-                    <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
+                    
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>" >
 
                     <label>FECHA</label><br>
                     <input type="date" name="fecha"><br>

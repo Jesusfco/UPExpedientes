@@ -122,8 +122,9 @@ if($_POST['email'] == 'superusuario' && $_POST['password'] == '12345'){
         $_SESSION['user']= "ADMINISTRADOR";
         $_SESSION['email']= "ADMINISTRADOR";
         $_SESSION['cargo']= "ADMINSITRADOR";
+        $_SESSION['status']= "activo";
         $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
-        header ('Location: menuroot2/');
+        header ('Location: app/');
 
 }
 
@@ -139,19 +140,22 @@ if($obj == false)
 
 if($obj->password ==  $_POST['password']){
 
+    if($obj->status == 'status') return;
     $sql = "UPDATE `usuario` SET 
         `fec_ingreso` = '" . date("Y-n-j") . "'
         WHERE `usuario`.`id` = '" . $obj->id . "'";
     
+        
 
     $_SESSION['id']=$obj->id;
     $_SESSION['user']=$obj->name;
     $_SESSION['email']=$obj->correo;
     $_SESSION['cargo']=$obj->cargo;
+    $_SESSION['status']= $obj->status;
     $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
 
     if($obj->cargo == 'doctor')
-    header ('Location: menuroot2/');
+    header ('Location: app/');
 
     else if($obj->cargo == 'paciente')
     header ('Location: paciente/');

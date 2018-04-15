@@ -96,3 +96,12 @@
         return $x;
 
     }
+
+
+$sql = "SELECT * FROM usuario WHERE id = '". $_SESSION['id'] ."'";
+
+$res = $conn->query($sql);
+$obj = $res->fetch_object();
+
+if($obj->status == 'inactivo')
+    header('LOCATION: ../login.php');
