@@ -29,10 +29,10 @@
         include "../php/middleware.php";
         include "../php/sql.php";
 
-        $query = "SELECT * FROM historial";
+        $query = "SELECT * FROM historial_clinico";
 
         if(isset($_POST['search'])){
-            $query = 'SELECT * FROM historial WHERE user_id LIKE "%' . $_POST['search'] . '%"';
+            $query = 'SELECT * FROM historial_clinico WHERE user_id LIKE "%' . $_POST['search'] . '%"';
         }
 
         $conn->query($query);
