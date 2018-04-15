@@ -1,7 +1,9 @@
-<a href="">Crear Usuario</a><br>
-<a href="historial/index.php">Historiales Clinicos</a><br>
-<a href="recetas/index.php">Recetas</a><br>
-<a href="expedientes/index.php">Expedientes</a><br>
+<a href="index.php">Usuarios</a><br>
+<a href="recetas/">RECETAS</a><br>
+<a href="orden/"> ORDEN</a><br>
+<a href="muestras/">MUESTRAS</a><br>
+<a href="alergias/">ALERGIAS</a><br>
+
         
 <br><br><br>
 <a href="php/closeSession.php">Salir</a>
