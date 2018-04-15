@@ -2,6 +2,7 @@
 <a href="recetas/">RECETAS</a><br>
 <a href="orden/"> ORDEN</a><br>
 <a href="muestras/">MUESTRAS</a><br>
+<a href="alergias/">ALERGIAS</a><br>
 
         
 <br><br><br>
