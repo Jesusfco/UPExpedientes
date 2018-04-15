@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 body {
     padding: 0;
     margin: 0;
@@ -6,8 +7,23 @@ body {
 
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+a {
+    color: green;
+    text-decoration-line: none;
 }
 
 .header {
@@ -81,6 +97,10 @@ table {
     border-color: grey;
 }
 
+table a {
+    /* display: block; */
+}
+
 thead {
     background: whitesmoke;
     display: table-header-group;
@@ -145,15 +165,25 @@ form {
     margin: 0 auto;
     display: block;
     width: 80%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
-form input {
+.contenedorPrincipal h2 {
+    text-align: center;
+}
+
+form input,
+textarea {
     display: block;
     width: 100%;
     border-radius: 5px;
     border: none;
     padding: 10px;
+    resize: vertical;
+}
+
+textarea {
+    height: 120px;
 }
 
 form input:focus {

@@ -44,7 +44,7 @@
         <h1>Historial</h1>
         <a href="create.php">CREAR HISTORIAL</a>
         <form method="POST" action="">
-            <input type="text" name="search" >
+            <input type="search" name="search" placeholder="ID USUARIO">
         </form>
 
         <table>
