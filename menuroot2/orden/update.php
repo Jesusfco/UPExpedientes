@@ -29,14 +29,13 @@
                 include "../php/sql.php";                                                 
 
                 $id = $_GET['id'];
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";
+                
                 if(isset($_POST['submit'])){
-                    $res = $conn->query($sql);
-                    $obj = $res->fetch_object();
+                    
                     include 'php/updateLogic.php';                    
                 } 
 
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";
+                $sql = "SELECT * FROM orden WHERE id = '" . $id . "' ";
                 $res = $conn->query($sql);
                 $obj = $res->fetch_object();
                 
@@ -49,7 +48,7 @@
                 <form method="POST" action="">                
 
                     <label>ID USUARIO</label><br>
-                    <input type="number" name="user_id" value="<?php echo $obj->user_id; ?>" required><br>
+                    <input type="number" name="user_id" value="<?php echo $obj->user_id; ?>" disabled><br>
 
                     <label>FECHA</label><br>
                     <input type="date" name="fecha" value="<?php echo $obj->fecha; ?>"><br>
@@ -58,7 +57,7 @@
                     <input type="text" name="tipo" value="<?php echo $obj->tipo; ?>"><br>
 
                     <label>Instrucciones de Suminitros</label><br>
-                    <input type="text" name="ins_suministro" value="<?php echo $obj->ins_suministro; ?>"><br>
+                    <input type="text" name="ins_sumistro" value="<?php echo $obj->ins_sumistro; ?>"><br>
 
                     <label>Instrucciones Adicionales</label><br>
                     <input type="text" name="ins_adicionales" value="<?php echo $obj->ins_adicionales; ?>"><br>

@@ -51,7 +51,7 @@
                     <input type="text" name="tipo"><br>
 
                     <label>Instrucciones de Suminitros</label><br>
-                    <input type="text" name="ins_suministro"><br>
+                    <input type="text" name="ins_sumistro"><br>
 
                     <label>Instrucciones Adicionales</label><br>
                     <input type="text" name="ins_adicionales"><br>

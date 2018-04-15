@@ -8,7 +8,7 @@
         
     $id = $_GET['id'];
 
-    $sql = "DELETE FROM receta WHERE id = '" . $id . "' ";
+    $sql = "DELETE FROM orden WHERE id = '" . $id . "' ";
 
     $conn->query($sql);
 
