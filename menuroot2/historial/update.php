@@ -42,7 +42,7 @@
                         
     ?>
     <div class="contenedorPrincipal">
-    <h1> Crear Historial </h1>
+    <h1> Actualizarr Historial </h1>
     <form method="POST" action="">
     
         <label>ID USUARIO<label>
@@ -240,9 +240,3 @@
     
 </body>
 </html>
-
-<?php
-if(!isset($_POST['submit']))
-    return;
-
-    
