@@ -154,7 +154,7 @@ if($obj->password ==  $_POST['password']){
     header ('Location: menuroot2/');
 
     else if($obj->cargo == 'paciente')
-    header ('Location: pacientes/');
+    header ('Location: paciente/');
 
   
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PANEL ADMINISTRACION || CASOS NOTIFICABLES </title>
+    <title>PANEL ADMINISTRACION || RECETAS </title>
     <link rel="stylesheet" href="../css/styles.css
     ">
 </head>
@@ -31,13 +31,13 @@
     include "../php/sql.php";
 
 
-    $sql = $query = "SELECT * FROM casos_notificables";
+    $sql = $query = "SELECT * FROM muestra";
 
     if(isset($_POST['search']))
-        $sql = $query = "SELECT * FROM casos_notificables WHERE user_id = " . $_POST['search'];
+        $sql = $query = "SELECT * FROM muestra WHERE user_id = " . $_POST['search'];
 
     else if(isset($_GET['userid']))
-        $sql = $query = "SELECT * FROM casos_notificables WHERE user_id = " . $_GET['userid'];
+        $sql = $query = "SELECT * FROM muestra WHERE user_id = " . $_GET['userid'];
        
         $consult = setUserIdCreatorId($conn->query($sql), $conn);
     
@@ -46,8 +46,8 @@
 
 <div class="contenedorPrincipal">
 
-<h1>CASOS NOTIFICABLES</h1>
-<a href="create.php">Crear CASO Notificable</a>
+<h1>MUESTRAS </h1>
+<a href="create.php">Crear Muestra</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
@@ -56,9 +56,10 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>PACIENTE </th>                
-                <th>CREADOR</th>
-                <th>RESUMEN CLINICO</th>                
+                <th>PACIENTE </th>
+                <th>Doctor</th>
+                <th>Tipo de Muestra</th>
+                <th>Fecha de recolección</th>                
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -66,15 +67,15 @@
         <tbody>
 
         <?php  
-        foreach($consult as $obj){
+       foreach($consult as $obj){
             echo "
             <tr>
                 <td>". $obj->id   ."</td>
                 <td>". $obj->user_id   ."</td>
                 <td>". $obj->creator_id   ."</td>
-                <td>". $obj->res_clinico   ."</td>                
+                <td>". $obj->tipo_muestra   ."</td>
+                <td>". $obj->fec_recoleccion   ."</td>                
                 <td>
-                    <a href='php/pdf.php?id=". $obj->id ."'>PDF</a><br>
                     <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                     <a href='show.php?id=". $obj->id ."'>VER</a><br>
                     <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>

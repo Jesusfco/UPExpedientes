@@ -31,22 +31,23 @@
     include "../php/sql.php";
 
 
-    $sql = $query = "SELECT * FROM receta";
+    $sql = $query = "SELECT * FROM citas";
 
-    if(isset($_POST['userid']))
-        $sql = $query = "SELECT * FROM receta WHERE user_id = " . $_POST['userid'];
+    if(isset($_POST['search']))
+        $sql = $query = "SELECT * FROM citas WHERE user_id LIKE '%" . $_POST['search'] . "%' ";
 
     else if(isset($_GET['userid']))
-        $sql = "SELECT * FROM receta WHERE user_id = " . $_GET['userid'];
-              
-        $recetas = setUserIdCreatorId($conn->query($sql), $conn);
+        $sql = $query = "SELECT * FROM citas WHERE user_id = " . $_GET['userid'];               
+
+        $object = doctorId($conn->query($sql), $conn);
+
 
 ?>
 
 <div class="contenedorPrincipal">
 
-<h1>RECETAS </h1>
-<a href="create.php">Crear Receta</a>
+<h1>CITAS </h1>
+<a href="create.php">Crear CITA</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
@@ -56,10 +57,10 @@
             <tr>
                 <th>ID</th>
                 <th>PACIENTE </th>
-                <th>CREADOR</th>
-                <th>Medicamento</th>
-                <th>Fecha de creación</th>                
-                <th>Acciones</th>
+                <th>DOCTOR</th>
+                <th>FECHA</th>
+                <th>HORA</th>                
+                <th>ACCIONES</th>
             </tr>
         </thead>
 
@@ -67,16 +68,15 @@
 
         <?php  
         
-            foreach ($recetas as $obj) {
+            foreach ($object as $obj) {
                 echo "
                 <tr>
                     <td>". $obj->id   ."</td>
-                    <td>". $obj->user_id  ."</td>
-                    <td>". $obj->creator_id   ."</td>
-                    <td>". $obj->medicamento   ."</td>
-                    <td>". $obj->created_at   ."</td>                
+                    <td>". $obj->user_id   ."</td>
+                    <td>". $obj->medico_id   ."</td>
+                    <td>". $obj->fecha   ."</td>
+                    <td>". $obj->hora   ."</td>                
                     <td>
-                        <a href='php/pdf.php?id=". $obj->id ."'>PDF</a><br>
                         <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                         <a href='show.php?id=". $obj->id ."'>VER</a><br>
                         <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>

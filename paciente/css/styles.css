@@ -1,0 +1,133 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: whitesmoke;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-weight: 400;
+}
+
+.header {
+    width: 100%;
+    display: block;
+    /* height: 250px; */
+    background: #5DADE2;
+}
+
+.header .centrar {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.header .absolute {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    width: 150px;
+    text-transform: capitalize;
+}
+
+.contenedorPrincipal {
+    max-width: 1200px;
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+
+.containerP {
+    display: flex;
+}
+
+.menu {
+    /* padding: 15px; */
+    background: white
+}
+
+.menu a {
+    color: black;
+    /* margin-bottom: 3px !important; */
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+    transition: background .4s;
+}
+
+.menu a:hover {
+    background: teal;
+    color: white;
+}
+
+
+/* TABLAS campos de tabla */
+
+.responsive-table {
+    overflow-x: scroll;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color: grey;
+}
+
+thead {
+    background: whitesmoke;
+    display: table-header-group;
+    vertical-align: middle;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+td {
+    padding: 5px 5px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+    /* max-width: 180px; */
+}
+
+tr:hover {
+    background: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+tr {
+    padding: 5px 4px;
+    height: 50px;
+    transition: .5s;
+    border-bottom: 1px solid rgb(233, 233, 233);
+    ;
+}
+
+th {
+    padding: 5px;
+}
+
+.showLinks {
+    display: flex;
+    width: 100%;
+    flex-flow: nowrap;
+    justify-content: space-between;
+}
+
+.showLinks a {
+    display: block;
+    padding: 8px;
+    background: teal;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.showLinks a:hover {
+    background: violet;
+}
