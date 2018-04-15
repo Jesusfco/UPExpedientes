@@ -39,7 +39,7 @@
     else if(isset($_GET['userid']))
         $sql = $query = "SELECT * FROM auxiliar_diagnostico WHERE user_id = " . $_GET['userid'];
        
-        $res = $conn->query($sql);
+        $consult = setUserId($conn->query($sql), $conn);
     
 
 ?>
@@ -66,8 +66,7 @@
         <tbody>
 
         <?php  
-        if($res){
-            while ($obj = $res->fetch_object()) {
+        foreach($consult as $obj){
                 echo "
                 <tr>
                     <td>". $obj->id   ."</td>
@@ -83,7 +82,7 @@
                 </tr>
                 
                 ";
-            }
+            
         }
          
         ?>

@@ -47,7 +47,7 @@
 <div class="contenedorPrincipal">
 
 <h1>CASOS NOTIFICABLES</h1>
-<a href="create.php">Crear Alergia</a>
+<a href="create.php">Crear CASO Notificable</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
