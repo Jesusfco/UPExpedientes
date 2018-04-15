@@ -30,6 +30,22 @@ body {
     margin: 0 auto;
 }
 
+.containerP {
+    display: flex;
+}
+
+.menu {
+    padding: 15px;
+    background: white
+}
+
+.menu a {
+    color: black;
+    /* margin-bottom: 3px !important; */
+    display: block;
+    text-decoration:none;
+}
+
 
 /* TABLAS campos de tabla */
 

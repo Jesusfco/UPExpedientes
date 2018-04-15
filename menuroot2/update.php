@@ -21,10 +21,8 @@
 
         <div class="containerP">
             <div class="menu">
-                <a href="http://localhost/expediente/menuroot2/">REGRESAR</a>
-               
-                <br><br><br>
-                <a href="php/closeSession.php">Salir</a>
+                <a href="index.php">REGRESAR</a>
+                <?php include "menu.php" ?>
 
             </div>
 

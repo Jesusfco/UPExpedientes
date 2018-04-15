@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+// echo $_SESSION['id'];
+
 if(!isset($_SESSION['id'])){
-    header("Location: http://localhost/expediente/login.php");
+    header("Location: ../login.php");
 }

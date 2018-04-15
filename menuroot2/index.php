@@ -21,10 +21,7 @@
 
 <div class="containerP">
     <div class="menu">
-        <a href="create.php">Crear Usuario</a>
-        
-        <br><br><br>
-        <a href="php/closeSession.php">Salir</a>
+        <?php include "menu.php" ?>
 
     </div>
 
@@ -78,8 +75,8 @@
                 <td>". $obj->status   ."</td>
                 <td>
                     <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
-                    <a href='status.php?id=". $obj->id ."'>Dara de Baja</a><br>                    
-                    <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
+                    // <a href='status.php?id=". $obj->id ."'>Dar de Baja</a><br>                    
+                    // <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
                     
                 </td>
             </tr>

@@ -34,6 +34,8 @@
 </head>
 <body>
 
+
+
 <!-- <div class="gtco-loader"></div> -->
 	
 	
@@ -90,28 +92,53 @@
 </html>
 
 <?php 
-if(!isset($_POST['email']))
+
+
+//VERIFICO SI YA ESTA AUTENTIFICADO
+session_start();
+if(isset($_POST['cargo'])){
+    $cargo = $_POST['cargo'];
+
+    if($cargo == 'doctor' || $cargo == 'ADMINISTRADOR')
+    header ('Location: menuroot2/');
+
+    else if($cargo == 'paciente')
+        header ('Location: pacientes/');
+
+}
+
+//VERIGICA SI SE MANDO EL FORMULARIO DE LOGIN
+if(!isset($_POST['email']))    
     return;
+    //YA NO EJECURA LO SIGUIENTE
 
-include 'php/sql';
 
-if($_POST['email'] == 'superusuario' && $_POST['password'] == '12345'){
-    session_start();
+
+include 'php/sql.php';
+//VERIFICO SI   UIERE ENTRAR COMO SUPERUSUARIO
+if($_POST['email'] == 'superusuario' && $_POST['password'] == '12345'){    
     
         $_SESSION['id']= 0;
         $_SESSION['user']= "ADMINISTRADOR";
         $_SESSION['email']= "ADMINISTRADOR";
         $_SESSION['cargo']= "ADMINSITRADOR";
         $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
+        header ('Location: menuroot2/');
+
 }
+
 
 $sql = "SELECT * FROM usuario WHERE correo = '". $_POST['email'] ."'";
 
-$conn->query($sql);
+$res = $conn->query($sql);
 $obj = $res->fetch_object();
 
+//Si no hay coincidencias de correo hasta aqui ejecutas
+if($obj == false)    
+    return;
+
 if($obj->password ==  $_POST['password']){
-    session_start();
+    
 
     $_SESSION['id']=$obj->id;
     $_SESSION['user']=$obj->name;
@@ -125,5 +152,6 @@ if($obj->password ==  $_POST['password']){
     else if($obj->cargo == 'paciente')
     header ('Location: pacientes/');
 
-    
+  
 }
+?>
