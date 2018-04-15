@@ -56,8 +56,8 @@
                 <label>Frecuencia</label><br>
                 <input type="text" name="frecuencia"><br>
 
-                <label>Vida de administracion</label><br>
-                <input type="text" name="frecuencia"><br>
+                <label>Via de administracion</label><br>
+                <input type="text" name="via_administracion"><br>
 
                 <label>Fecha de Inicio</label><br>
                 <input type="date" name="fec_inicio"><br>
@@ -66,7 +66,7 @@
                 <input type="date" name="fec_fin"><br>
 
                 <label>Indicaciones</label><br>
-                <input type="date" name="indicaciones_Ad"><br>
+                <input type="text" name="indicaciones_ad"><br>
 
                 
 
