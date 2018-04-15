@@ -47,7 +47,7 @@
         <h1>Usuarios</h1>
         <a href="create.php">CREAR USUARIO </a>
         <form method="POST" action="">
-            <input type="text" name="search" AUTOFOCUS>
+            <input type="text" name="search" placeholder="NOMBRE DE USUARIO" AUTOFOCUS>
         </form>
 
         <table>
