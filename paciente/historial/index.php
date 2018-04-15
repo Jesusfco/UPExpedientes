@@ -29,11 +29,7 @@
         include "../php/middleware.php";
         include "../php/sql.php";
 
-        $sql = "SELECT * FROM historial_clinico";
-
-        if(isset($_POST['search'])){
-            $sql = 'SELECT * FROM historial_clinico WHERE user_id LIKE "%' . $_POST['search'] . '%"';
-        }
+        $sql = $query = "SELECT * FROM historial_clinico WHERE user_id = " . $_SESSION['id'];        
 
         $consult = setUserId($conn->query($sql), $conn);
         
@@ -42,10 +38,6 @@
     <div class="contenedorPrincipal">
 
         <h1>Historial</h1>
-        <a href="create.php">CREAR HISTORIAL</a>
-        <form method="POST" action="">
-            <input type="text" name="search" >
-        </form>
 
         <table>
         <thead>
@@ -78,9 +70,7 @@
                 <td>". $obj->vivienda   ."</td>
                 <td>". $obj->created_at   ."</td>
                 <td>
-                    <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                     <a href='show.php?id=". $obj->id ."'>VER</a><br>                    
-                    <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
                     
                 </td>
             </tr>

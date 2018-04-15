@@ -45,7 +45,7 @@
 
                 
 
-                <label>ID USUARIO</label><br>
+                <label>ID USUARIO PACIENTE</label><br>
                 <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
                 <label>TIPO DE ESTUDIO</label><br>

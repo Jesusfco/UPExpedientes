@@ -59,7 +59,6 @@
 
                 <div class="showLinks">
                     <a href="recetas/create.php?id=<?php echo $obj1->id; ?>">Asignar Receta</a>
-                    <a href="orden/create.php?id=<?php echo $obj1->id; ?>">Asignar Orden</a>
                     <a href="muestras/create.php?id=<?php echo $obj1->id; ?>">Asignar Muestra</a>
                     <a href="alergias/create.php?id=<?php echo $obj1->id; ?>">Asignar Alergia</a>
                     <a href="historial/create.php?id=<?php echo $obj1->id; ?>">Asignar Historial</a>

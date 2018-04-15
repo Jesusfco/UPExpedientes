@@ -31,13 +31,8 @@
     include "../php/sql.php";
 
 
-    $sql = $query = "SELECT * FROM citas";
-
-    if(isset($_POST['search']))
-        $sql = $query = "SELECT * FROM citas WHERE user_id LIKE '%" . $_POST['search'] . "%' ";
-
-    else if(isset($_GET['userid']))
-        $sql = $query = "SELECT * FROM citas WHERE user_id = " . $_GET['userid'];               
+    $sql = $query = "SELECT * FROM citas WHERE user_id = " . $_SESSION['id'];
+              
 
         $object = doctorId($conn->query($sql), $conn);
 
@@ -48,9 +43,7 @@
 
 <h1>CITAS </h1>
 <a href="create.php">Crear CITA</a>
-        <form method="POST" action="">
-            <input type="text" name="search"  placeholder="id usuario">
-        </form>
+
 
         <table>
         <thead>
@@ -77,9 +70,7 @@
                     <td>". $obj->fecha   ."</td>
                     <td>". $obj->hora   ."</td>                
                     <td>
-                        <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                         <a href='show.php?id=". $obj->id ."'>VER</a><br>
-                        <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
                         
                     </td>
                 </tr>

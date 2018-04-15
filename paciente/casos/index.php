@@ -31,13 +31,8 @@
     include "../php/sql.php";
 
 
-    $sql = $query = "SELECT * FROM casos_notificables";
+    $sql = $query = "SELECT * FROM casos_notificables WHERE user_id = " . $_SESSION['id'];
 
-    if(isset($_POST['search']))
-        $sql = $query = "SELECT * FROM casos_notificables WHERE user_id = " . $_POST['search'];
-
-    else if(isset($_GET['userid']))
-        $sql = $query = "SELECT * FROM casos_notificables WHERE user_id = " . $_GET['userid'];
        
         $consult = setUserIdCreatorId($conn->query($sql), $conn);
     
@@ -47,10 +42,6 @@
 <div class="contenedorPrincipal">
 
 <h1>CASOS NOTIFICABLES</h1>
-<a href="create.php">Crear CASO Notificable</a>
-        <form method="POST" action="">
-            <input type="text" name="search"  placeholder="id usuario">
-        </form>
 
         <table>
         <thead>
@@ -75,7 +66,6 @@
                 <td>". $obj->res_clinico   ."</td>                
                 <td>
                     <a href='php/pdf.php?id=". $obj->id ."'>PDF</a><br>
-                    <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                     <a href='show.php?id=". $obj->id ."'>VER</a><br>
                     <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
                     
