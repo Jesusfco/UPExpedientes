@@ -28,47 +28,49 @@
                 include "../php/middleware.php";
                 include "../php/sql.php";                                                 
 
-                //SI EL FORMULARIO SE ENVIO
-                if(isset($_POST['submit'])){                   
-                    include 'php/createLogic.php';                    
-                }   
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";              
+
+                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";
+                $res = $conn->query($sql);
+                $obj = $res->fetch_object();
                 
-                $id = "";
-                if(isset($_GET['id']))
-                    $id = $_GET['id'];
+                
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>Crear receta</h2>
+                <h2>VER Receta</h2>
 
-                <form method="POST" action="">
+                <form>
+
                 
-                <label>ID USUARIO PACIENTE</label><br>
-                <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
+
+                <label>ID USUARIO</label><br>
+                <input type="number" name="user_id" value="<?php echo $obj->user_id; ?>" disabled><br>
 
                 <label>MEDICAMENTO</label><br>
-                <input type="text" name="medicamento"><br>
+                <input type="text" name="medicamento" value="<?php echo $obj->medicamento; ?>" disabled><br>
 
                 <label>Unidad de Medida</label><br>
-                <input type="text" name="unidad_medida"><br>
+                <input type="text" name="unidad_medida" value="<?php echo $obj->unidad_medida; ?>" disabled><br>
 
                 <label>Dosis</label><br>
-                <input type="text" name="dosis"><br>
+                <input type="text" name="dosis" value="<?php echo $obj->dosis; ?>" disabled><br>
 
                 <label>Frecuencia</label><br>
-                <input type="text" name="frecuencia"><br>
+                <input type="text" name="frecuencia" value="<?php echo $obj->frecuencia; ?>" disabled><br>
 
                 <label>Via de administracion</label><br>
-                <input type="text" name="via_administracion"><br>
+                <input type="text" name="via_administracion" value="<?php echo $obj->via_administracion; ?>" disabled><br>
 
                 <label>Fecha de Inicio</label><br>
-                <input type="date" name="fec_inicio"><br>
+                <input type="date" name="fec_inicio" value="<?php echo $obj->fec_inicio; ?>" disabled><br>
 
                 <label>Fecha de Fin</label><br>
-                <input type="date" name="fec_fin"><br>
+                <input type="date" name="fec_fin" value="<?php echo $obj->fec_fin; ?>" disabled><br>
 
                 <label>Indicaciones</label><br>
-                <input type="text" name="indicaciones_ad"><br>
+                <input type="text" name="indicaciones_ad" value="<?php echo $obj->indicaciones_ad; ?>" disabled><br>
 
                 
 
@@ -76,7 +78,7 @@
 
                 
 
-                <input type="submit" name="submit" placeholder="CREAR datos">
+                <input type="submit" name="submit" placeholder="ACTUALIZAR datos">
             </form>
 
         

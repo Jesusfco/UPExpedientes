@@ -1,3 +1,8 @@
+<?php 
+    include "php/middleware.php";
+    include "php/sql.php"; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +21,10 @@
             
             <h1>Registros Clínica David</h1>
         </div>
+
+        <div class="absolute">
+            <?php echo $_SESSION['cargo'] . ": " . $_SESSION['user']; ?>
+        </div>
     </div>
 
 
@@ -26,10 +35,7 @@
 
             </div>
 
-            <?php 
-                include "php/middleware.php";
-                include "php/sql.php";
-                                
+            <?php                                                 
                 $id = $_GET['id'];
 
                 $query1 = "SELECT * FROM usuario WHERE id = '" . $id . "' ";
@@ -56,13 +62,13 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>Usuario <?php echo $obj1->curp; ?></h2>
+                <h2>Usuario <?php echo $obj1->name; ?></h2>
             <form method="POST" action="">
 
                 <h2>Tabla Usuario</h2>
 
                 <label>NOMBRE COMPLETO</label>
-                <input type="text" name="name" value="<?php echo $obj1->name; ?>"><br>
+                <input type="text" name="name" value="<?php echo $obj1->name; ?>" required><br>
 
                 <label>CURP</label>
                 <input type="text" name="curp" value="<?php echo $obj1->curp; ?>"><br>

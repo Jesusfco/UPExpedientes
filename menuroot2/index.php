@@ -29,10 +29,10 @@
         include "php/middleware.php";
         include "php/sql.php";
 
-        $query = "SELECT * FROM usuario";
+        $query = "SELECT * FROM usuario WHERE name LIKE '%%' ORDER BY name ASC";
 
         if(isset($_POST['search'])){
-            $query = 'SELECT * FROM usuario WHERE name LIKE "%' . $_POST['search'] . '%"';
+            $query = 'SELECT * FROM usuario WHERE name LIKE "%' . $_POST['search'] . '%" ORDER BY name ASC';
         }
 
         if($res = $conn->query($query)){
@@ -46,7 +46,7 @@
 
         <h1>Usuarios</h1>
         <form method="POST" action="">
-            <input type="text" name="search" >
+            <input type="text" name="search" AUTOFOCUS>
         </form>
 
         <table>
@@ -75,8 +75,8 @@
                 <td>". $obj->status   ."</td>
                 <td>
                     <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
-                    // <a href='status.php?id=". $obj->id ."'>Dar de Baja</a><br>                    
-                    // <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
+                    <a href='show.php?id=". $obj->id ."'>Ver</a><br>                    
+                    
                     
                 </td>
             </tr>

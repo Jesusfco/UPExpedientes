@@ -138,6 +138,10 @@ if($obj == false)
     return;
 
 if($obj->password ==  $_POST['password']){
+
+    $sql = "UPDATE `usuario` SET 
+        `fec_ingreso` = '" . date("Y-n-j") . "'
+        WHERE `usuario`.`id` = '" . $obj->id . "'";
     
 
     $_SESSION['id']=$obj->id;

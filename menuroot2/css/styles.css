@@ -23,6 +23,15 @@ body {
     margin: 0 auto;
 }
 
+.header .absolute {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    width: 150px;
+    text-transform: capitalize;
+}
+
 .contenedorPrincipal {
     max-width: 1200px;
     width: 85%;
@@ -35,7 +44,7 @@ body {
 }
 
 .menu {
-    padding: 15px;
+    /* padding: 15px; */
     background: white
 }
 
@@ -43,7 +52,14 @@ body {
     color: black;
     /* margin-bottom: 3px !important; */
     display: block;
-    text-decoration:none;
+    padding: 5px 15px;
+    text-decoration: none;
+    transition: background .4s;
+}
+
+.menu a:hover {
+    background: teal;
+    color: white;
 }
 
 
@@ -93,4 +109,25 @@ tr {
 
 th {
     padding: 5px;
+}
+
+.showLinks {
+    display: flex;
+    width: 100%;
+    flex-flow: nowrap;
+    justify-content: space-between;
+}
+
+.showLinks a {
+    display: block;
+    padding: 8px;
+    background: teal;
+    color: white;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.showLinks a:hover {
+    background: violet;
 }

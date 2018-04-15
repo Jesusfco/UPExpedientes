@@ -1,9 +1,13 @@
-<a href="index.php">Usuarios</a><br>
-<a href="recetas/">RECETAS</a><br>
-<a href="orden/"> ORDEN</a><br>
-<a href="muestras/">MUESTRAS</a><br>
-<a href="alergias/">ALERGIAS</a><br>
+<a href="index.php">USUARIOS</a>
+<a href="recetas/">RECETAS</a>
+<a href="orden/"> ORDEN</a>
+<a href="muestras/">MUESTRAS</a>
+<a href="alergias/">ALERGIAS</a>
+<a href="historial/">HISTORIAL</a>
+<a href="citas/">CITAS</a>
+<a href="casos/">CASOS NOTIFICABLES</a>
+<a href="auxiliar/">AUXILIAR DE DIAGNOSTICO</a>
 
         
-<br><br><br>
+<br><br>
 <a href="php/closeSession.php">Salir</a>

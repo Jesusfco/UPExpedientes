@@ -32,6 +32,10 @@
        if(isset($_POST['submit'])){
            include "php/createLogic.php";
        }
+
+       $id = "";
+            if(isset($_GET['id']))
+                $id = $_GET['id'];
         
                         
     ?>
@@ -39,8 +43,8 @@
     <h1> Crear Historial </h1>
     <form method="POST" action="">
     
-        <label>ID USUARIO<label>
-        <input name="user_id" type="number" required><br>
+        <label>ID USUARIO PACIENTE</label><br>
+        <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
         <label>Estado Civil<label>
         <input name="est_civil" type="text"><br>

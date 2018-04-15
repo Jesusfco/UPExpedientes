@@ -32,6 +32,10 @@
                 if(isset($_POST['submit'])){                   
                     include 'php/createLogic.php';                    
                 }                       
+
+                $id = "";
+                if(isset($_GET['id']))
+                    $id = $_GET['id'];
             ?>
             <div class="contenedorPrincipal">
 
@@ -42,7 +46,7 @@
                 
 
                 <label>ID USUARIO PACIENTE</label><br>
-                <input type="number" name="user_id" required><br>
+                <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
                 <label>TIPO DE REACCION</label><br>
                 <input type="text" name="tipo_reaccion"><br>

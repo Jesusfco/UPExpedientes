@@ -37,10 +37,9 @@
         $sql = $query = "SELECT * FROM receta WHERE user_id = " . $_POST['userid'];
 
     else if(isset($_GET['userid']))
-        $sql = $query = "SELECT * FROM receta WHERE user_id = " . $_GET['userid'];
-       
-        $res = $conn->query($sql);
-    
+        $sql = "SELECT * FROM receta WHERE user_id = " . $_GET['userid'];
+              
+        $recetas = setUserIdCreatorId($conn->query($sql), $conn);
 
 ?>
 
@@ -67,12 +66,12 @@
         <tbody>
 
         <?php  
-        if($res){
-            while ($obj = $res->fetch_object()) {
+        
+            foreach ($recetas as $obj) {
                 echo "
                 <tr>
                     <td>". $obj->id   ."</td>
-                    <td>". $obj->user_id   ."</td>
+                    <td>". $obj->user_id  ."</td>
                     <td>". $obj->creator_id   ."</td>
                     <td>". $obj->medicamento   ."</td>
                     <td>". $obj->created_at   ."</td>                
@@ -86,7 +85,7 @@
                 
                 ";
             }
-        }
+        
          
         ?>
             

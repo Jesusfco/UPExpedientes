@@ -20,7 +20,7 @@
 
         <div class="containerP">
             <div class="menu">
-                <a href="index.php">REGRESAR</a>
+                <a href="index.php">REGRESAR</a><BR>
                 <?php include "menu.php" ?>
             </div>
 
@@ -31,36 +31,36 @@
                 //SI EL FORMULARIO SE ENVIO
                 if(isset($_POST['submit'])){                   
                     include 'php/createLogic.php';                    
-                }                       
+                }    
                 $id = "";
                 if(isset($_GET['id']))
-                    $id = $_GET['id'];
-            
+                    $id = $_GET['id'];                   
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>Crear Muestra</h2>
+                <h2>Crear Cita</h2>
 
                 <form method="POST" action="">
 
                 
 
-                <label>ID USUARIO PACIENTE</label><br>
-                <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
+                    <label>ID USUARIO PACIENTE</label><br>
+                    <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
-                <label>TIPO DE MUESTRA</label><br>
-                <input type="text" name="tipo_muestra"><br>
+                    <label>FECHA</label><br>
+                    <input type="date" name="fecha"><br>
 
-                <label>NUMERO DE MUESTRAS</label><br>
-                <input type="number" name="numero_muestras" min="1"><br>
+                    <label>HORA</label><br>
+                    <input type="time" name="hora"><br>
 
-                <label>FECHA DE RECOLECCION</label><br>
-                <input type="date" name="fec_recoleccion"><br>
+                    <label>Sintomas</label><br>
+                    <textarea name="sintomas"></textarea><BR>
 
-                <label>FECHA DE ENTREGA</label><br>
-                <input type="date" name="fec_entrega"><br>                                
+                    <label>Administracion de Medicamentos</label><br>
+                    <textarea name="medicamentos_admin"></textarea>   <br>                
+                                                                
+                <input type="submit" name="submit" placeholder="CREAR DATOS">
 
-                <input type="submit" name="submit" placeholder="CREAR datos">
             </form>
 
         

@@ -31,7 +31,10 @@
                 //SI EL FORMULARIO SE ENVIO
                 if(isset($_POST['submit'])){                   
                     include 'php/createLogic.php';                    
-                }                       
+                }    
+                $id = "";
+                if(isset($_GET['id']))
+                    $id = $_GET['id'];                   
             ?>
             <div class="contenedorPrincipal">
 
@@ -41,8 +44,8 @@
 
                 
 
-                    <label>ID USUARIO</label><br>
-                    <input type="number" name="user_id" required><br>
+                    <label>ID USUARIO PACIENTE</label><br>
+                    <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
                     <label>FECHA</label><br>
                     <input type="date" name="fecha"><br>

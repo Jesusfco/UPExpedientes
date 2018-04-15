@@ -31,30 +31,23 @@
     include "../php/sql.php";
 
 
-    $sql = $query = "SELECT * FROM orden";
+    $sql = $query = "SELECT * FROM citas";
 
     if(isset($_POST['search']))
-        $sql = $query = "SELECT * FROM orden WHERE user_id LIKE '%" . $_POST['search'] . "%' ";
+        $sql = $query = "SELECT * FROM citas WHERE user_id LIKE '%" . $_POST['search'] . "%' ";
 
     else if(isset($_GET['userid']))
-        $sql = $query = "SELECT * FROM orden WHERE user_id = " . $_GET['userid'];       
-        $res = $conn->query($sql);
+        $sql = $query = "SELECT * FROM citas WHERE user_id = " . $_GET['userid'];               
 
-        $sql2 = "SELECT name, id FROM usuario";
-
-        $usuarios = [];
-        $result = $conn->query($sql2);
-        foreach($result as $re) {
-            $usuarios[] = $re;
-        }
+        $object = doctorId($conn->query($sql), $conn);
 
 
 ?>
 
 <div class="contenedorPrincipal">
 
-<h1>ORDEN </h1>
-<a href="create.php">Crear Orden</a>
+<h1>CITAS </h1>
+<a href="create.php">Crear CITA</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
@@ -64,25 +57,25 @@
             <tr>
                 <th>ID</th>
                 <th>PACIENTE </th>
-                <th>CREADOR</th>
-                <th>TIPO</th>
-                <th>Fecha de creación</th>                
-                <th>Acciones</th>
+                <th>DOCTOR</th>
+                <th>FECHA</th>
+                <th>HORA</th>                
+                <th>ACCIONES</th>
             </tr>
         </thead>
 
         <tbody>
 
         <?php  
-        if($res){
-            while ($obj = $res->fetch_object()) {
+        
+            foreach ($object as $obj) {
                 echo "
                 <tr>
                     <td>". $obj->id   ."</td>
                     <td>". $obj->user_id   ."</td>
-                    <td>". $obj->creator_id   ."</td>
-                    <td>". $obj->tipo   ."</td>
-                    <td>". $obj->created_at   ."</td>                
+                    <td>". $obj->medico_id   ."</td>
+                    <td>". $obj->fecha   ."</td>
+                    <td>". $obj->hora   ."</td>                
                     <td>
                         <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
                         <a href='show.php?id=". $obj->id ."'>VER</a><br>
@@ -93,7 +86,7 @@
                 
                 ";
             }
-        }
+        
          
         ?>
             
