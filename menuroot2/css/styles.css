@@ -14,13 +14,18 @@ body {
     width: 100%;
     display: block;
     /* height: 250px; */
-    background: #5DADE2;
+    background: white;
 }
 
 .header .centrar {
     display: flex;
     width: fit-content;
-    margin: 0 auto;
+    padding-left: 40px;
+    /* margin: 0 auto; */
+}
+
+.header .centrar h1 {
+    color: #3ac1bc;
 }
 
 .header .absolute {
@@ -130,4 +135,39 @@ th {
 
 .showLinks a:hover {
     background: violet;
+}
+
+
+/* FORMULARIO INPUTS ETC */
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+form input {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+form input:focus {
+    outline: none;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    border: none;
+    background: #aec6c4;
+}
+
+form input[type=submit] {
+    background: turquoise;
+    color: white;
 }
