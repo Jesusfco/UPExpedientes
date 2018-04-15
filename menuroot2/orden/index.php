@@ -40,13 +40,7 @@
         $sql = $query = "SELECT * FROM orden WHERE user_id = " . $_GET['userid'];       
         $res = $conn->query($sql);
 
-        $sql2 = "SELECT name, id FROM usuario";
-
-        $usuarios = [];
-        $result = $conn->query($sql2);
-        foreach($result as $re) {
-            $usuarios[] = $re;
-        }
+        $consult = setUserIdCreatorId($conn->query($sql), $conn);
 
 
 ?>
@@ -74,8 +68,8 @@
         <tbody>
 
         <?php  
-        if($res){
-            while ($obj = $res->fetch_object()) {
+        
+        foreach($consult as $obj){
                 echo "
                 <tr>
                     <td>". $obj->id   ."</td>
@@ -93,7 +87,7 @@
                 
                 ";
             }
-        }
+        
          
         ?>
             

@@ -39,7 +39,7 @@
     else if(isset($_GET['userid']))
         $sql = $query = "SELECT * FROM muestra WHERE user_id = " . $_GET['userid'];
        
-        $res = $conn->query($sql);
+        $consult = setUserIdCreatorId($conn->query($sql), $conn);
     
 
 ?>
@@ -67,25 +67,24 @@
         <tbody>
 
         <?php  
-        if($res){
-            while ($obj = $res->fetch_object()) {
-                echo "
-                <tr>
-                    <td>". $obj->id   ."</td>
-                    <td>". $obj->user_id   ."</td>
-                    <td>". $obj->creator_id   ."</td>
-                    <td>". $obj->tipo_muestra   ."</td>
-                    <td>". $obj->fec_recoleccion   ."</td>                
-                    <td>
-                        <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
-                        <a href='show.php?id=". $obj->id ."'>VER</a><br>
-                        <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
-                        
-                    </td>
-                </tr>
-                
-                ";
-            }
+       foreach($consult as $obj){
+            echo "
+            <tr>
+                <td>". $obj->id   ."</td>
+                <td>". $obj->user_id   ."</td>
+                <td>". $obj->creator_id   ."</td>
+                <td>". $obj->tipo_muestra   ."</td>
+                <td>". $obj->fec_recoleccion   ."</td>                
+                <td>
+                    <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
+                    <a href='show.php?id=". $obj->id ."'>VER</a><br>
+                    <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
+                    
+                </td>
+            </tr>
+            
+            ";
+            
         }
          
         ?>

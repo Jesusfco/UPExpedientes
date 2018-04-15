@@ -29,56 +29,43 @@
                 include "../php/sql.php";                                                 
 
                 $id = $_GET['id'];
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";              
-
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";
+                $sql = "SELECT * FROM citas WHERE id = '" . $id . "' ";              
+                
                 $res = $conn->query($sql);
-                $obj = $res->fetch_object();
+                $obj = doctorId($conn->query($sql), $conn);
                 
                 
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>VER Receta</h2>
+                <h2>VER CITA</h2>
 
                 <form>
 
                 
 
-                <label>ID USUARIO</label><br>
-                <input type="number" name="user_id" value="<?php echo $obj->user_id; ?>" disabled><br>
+                <label>USUARIO</label><br>
+                <input type="text" name="user_id" value="<?php echo $obj[0]->user_id; ?>" disabled><br>
 
-                <label>MEDICAMENTO</label><br>
-                <input type="text" name="medicamento" value="<?php echo $obj->medicamento; ?>" disabled><br>
+                <label>MEDICO</label><br>
+                <input type="text" name="user_id" value="<?php echo $obj[0]->medico_id; ?>" disabled><br>
 
-                <label>Unidad de Medida</label><br>
-                <input type="text" name="unidad_medida" value="<?php echo $obj->unidad_medida; ?>" disabled><br>
+                <label>FECHA</label><br>
+                <input type="text" name="medicamento" value="<?php echo $obj[0]->fecha; ?>" disabled><br>
 
-                <label>Dosis</label><br>
-                <input type="text" name="dosis" value="<?php echo $obj->dosis; ?>" disabled><br>
+                <label>HORA</label><br>
+                <input type="text" name="unidad_medida" value="<?php echo $obj[0]->hora; ?>" disabled><br>
 
-                <label>Frecuencia</label><br>
-                <input type="text" name="frecuencia" value="<?php echo $obj->frecuencia; ?>" disabled><br>
+                <h5>Sintomas:</h5>
+                <p><?php echo $obj[0]->sintomas; ?></p>
 
-                <label>Via de administracion</label><br>
-                <input type="text" name="via_administracion" value="<?php echo $obj->via_administracion; ?>" disabled><br>
+                <h5>Administracion de Medicamentos:</h5>
+                <p><?php echo $obj[0]->medicamentos_admin; ?></p>
 
-                <label>Fecha de Inicio</label><br>
-                <input type="date" name="fec_inicio" value="<?php echo $obj->fec_inicio; ?>" disabled><br>
-
-                <label>Fecha de Fin</label><br>
-                <input type="date" name="fec_fin" value="<?php echo $obj->fec_fin; ?>" disabled><br>
-
-                <label>Indicaciones</label><br>
-                <input type="text" name="indicaciones_ad" value="<?php echo $obj->indicaciones_ad; ?>" disabled><br>
-
+                <label>FECHA/HORA CREACINO DE REGISTRO</label><br>
+                <input type="text" name="unidad_medida" value="<?php echo $obj[0]->created_at; ?>" disabled><br>
                 
-
                 
-
-                
-
-                <input type="submit" name="submit" placeholder="ACTUALIZAR datos">
             </form>
 
         

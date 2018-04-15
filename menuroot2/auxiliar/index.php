@@ -39,7 +39,7 @@
     else if(isset($_GET['userid']))
         $sql = $query = "SELECT * FROM alergias WHERE user_id = " . $_GET['userid'];
        
-        $consult = setUserId($conn->query($sql), $conn);
+        $res = $conn->query($sql);
     
 
 ?>
@@ -66,23 +66,24 @@
         <tbody>
 
         <?php  
-        foreach($consult as $obj){
-            echo "
-            <tr>
-                <td>". $obj->id   ."</td>
-                <td>". $obj->user_id   ."</td>
-                <td>". $obj->tipo_reaccion   ."</td>
-                <td>". $obj->fec_deteccion   ."</td>                
-                <td>
-                    <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
-                    <a href='show.php?id=". $obj->id ."'>VER</a><br>
-                    <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
-                    
-                </td>
-            </tr>
-            
-            ";
-            
+        if($res){
+            while ($obj = $res->fetch_object()) {
+                echo "
+                <tr>
+                    <td>". $obj->id   ."</td>
+                    <td>". $obj->user_id   ."</td>
+                    <td>". $obj->tipo_reaccion   ."</td>
+                    <td>". $obj->fec_deteccion   ."</td>                
+                    <td>
+                        <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
+                        <a href='show.php?id=". $obj->id ."'>VER</a><br>
+                        <a href='delete.php?id=". $obj->id ."'>Eliminar</a><br>
+                        
+                    </td>
+                </tr>
+                
+                ";
+            }
         }
          
         ?>

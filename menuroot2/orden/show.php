@@ -29,48 +29,65 @@
                 include "../php/sql.php";                                                 
 
                 $id = $_GET['id'];
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";              
+                $sql = "SELECT * FROM orden WHERE id = '" . $id . "' ";              
 
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";
-                $res = $conn->query($sql);
-                $obj = $res->fetch_object();
+                $sql = "SELECT * FROM orden WHERE id = '" . $id . "' ";
+
+                $obj = setUserIdCreatorId($conn->query($sql), $conn);
+
+                $obj = $obj[0];
                 
                 
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>VER Receta</h2>
+                <h2>VER ORDEN #<?php echo $obj->id; ?></h2>
 
                 <form>
 
                 
 
-                <label>ID USUARIO</label><br>
-                <input type="number" name="user_id" value="<?php echo $obj->user_id; ?>" disabled><br>
+                <label>PACIENTE</label><br>
+                <input type="TEXT" name="user_id" value="<?php echo $obj->user_id; ?>" disabled><br>
+
+                <label>DOCTOR</label><br>
+                <input type="text" name="medicamento" value="<?php echo $obj->creator_id; ?>" disabled><br>
+
+                <label>FECHA</label><br>
+                <input type="text" name="unidad_medida" value="<?php echo $obj->fecha; ?>" disabled><br>
+
+                <label>TIPO</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->tipo; ?>" disabled><br>
+
+                <h5>Instrucciones de suministro:</h5>
+                <p><?php echo $obj->ins_sumistro; ?></p>
+
+                <h5>Instrucciones de Adicionales:</h5>
+                <p><?php echo $obj->ins_adicionales; ?></p>
+
+                <label>DESTINATARIO</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->destinatario; ?>" disabled><br>
 
                 <label>MEDICAMENTO</label><br>
-                <input type="text" name="medicamento" value="<?php echo $obj->medicamento; ?>" disabled><br>
+                <input type="text" name="dosis" value="<?php echo $obj->medicamento; ?>" disabled><br>
 
-                <label>Unidad de Medida</label><br>
-                <input type="text" name="unidad_medida" value="<?php echo $obj->unidad_medida; ?>" disabled><br>
+                <h5>DIAGNOSTICO:</h5>
+                <p><?php echo $obj->diagnostico; ?></p>
 
-                <label>Dosis</label><br>
-                <input type="text" name="dosis" value="<?php echo $obj->dosis; ?>" disabled><br>
+                <label>FECHA DE INICIO</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->fec_inicio; ?>" disabled><br>
 
-                <label>Frecuencia</label><br>
-                <input type="text" name="frecuencia" value="<?php echo $obj->frecuencia; ?>" disabled><br>
+                <label>FECHA DE ENTREGA</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->fec_entrega; ?>" disabled><br>
 
-                <label>Via de administracion</label><br>
-                <input type="text" name="via_administracion" value="<?php echo $obj->via_administracion; ?>" disabled><br>
+                <label>FECHA DE TERMINO</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->fec_termino; ?>" disabled><br>
 
-                <label>Fecha de Inicio</label><br>
-                <input type="date" name="fec_inicio" value="<?php echo $obj->fec_inicio; ?>" disabled><br>
+                <label>PRIODIODAD</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->prioridad; ?>" disabled><br>
 
-                <label>Fecha de Fin</label><br>
-                <input type="date" name="fec_fin" value="<?php echo $obj->fec_fin; ?>" disabled><br>
-
-                <label>Indicaciones</label><br>
-                <input type="text" name="indicaciones_ad" value="<?php echo $obj->indicaciones_ad; ?>" disabled><br>
+                <label>FECHA/HORA DE CREACION DE REGISTRO</label><br>
+                <input type="text" name="dosis" value="<?php echo $obj->created_at; ?>" disabled><br>
 
                 
 
@@ -78,7 +95,7 @@
 
                 
 
-                <input type="submit" name="submit" placeholder="ACTUALIZAR datos">
+                
             </form>
 
         

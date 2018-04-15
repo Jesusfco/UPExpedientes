@@ -29,13 +29,13 @@
         include "../php/middleware.php";
         include "../php/sql.php";
 
-        $query = "SELECT * FROM historial_clinico";
+        $sql = "SELECT * FROM historial_clinico";
 
         if(isset($_POST['search'])){
-            $query = 'SELECT * FROM historial_clinico WHERE user_id LIKE "%' . $_POST['search'] . '%"';
+            $sql = 'SELECT * FROM historial_clinico WHERE user_id LIKE "%' . $_POST['search'] . '%"';
         }
 
-        $conn->query($query);
+        $consult = setUserId($conn->query($sql), $conn);
         
                         
     ?>
@@ -67,8 +67,8 @@
         <?php  
         
         
-        if($res = $conn->query($query))
-        while ($obj = $res->fetch_object()) {
+       foreach($consult as $obj){
+       
             echo "
             <tr>
                 <td>". $obj->id   ."</td>
