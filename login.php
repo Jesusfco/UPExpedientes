@@ -118,7 +118,7 @@ include 'php/sql.php';
 //VERIFICO SI   UIERE ENTRAR COMO SUPERUSUARIO
 if($_POST['email'] == 'superusuario' && $_POST['password'] == '12345'){    
     
-        $_SESSION['id']= 0;
+        $_SESSION['id']= 2;
         $_SESSION['user']= "ADMINISTRADOR";
         $_SESSION['email']= "ADMINISTRADOR";
         $_SESSION['cargo']= "ADMINSITRADOR";
