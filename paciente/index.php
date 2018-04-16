@@ -12,7 +12,7 @@
 
 <div class="header">
     <div class="centrar">
-        <img src="http://localhost/expediente/images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png">
+        <img src="../../images/logo2.png">
         
         <h1>Registros Clínica David</h1>
     </div>
@@ -48,22 +48,19 @@
         <h1>BIENVENIDO <?php echo $_SESSION['user']; ?></h1>
         <h2>Tabla Usuario</h2>
 
-        <a href="update.php">EDITAR MIS DATOS</a><br><br>
 
                 <label>NOMBRE COMPLETO</label><br>
-                <input type="text" name="name" value="<?php echo $obj1->name; ?>"  disabled><br>
+                <p> <?php echo $obj1->name; ?></p>
 
                 <label>CURP</label><br>
-                <input type="text" name="curp" value="<?php echo $obj1->curp; ?>" disabled><br>
+                <p> <?php echo $obj1->curp; ?></p>
 
                 <label>CARGO: <?php echo $obj1->cargo; ?></label><br>
                 
                 
                 
-
-                
                 <label>CORREO</label><br>
-                <input type="text" name="correo" value="<?php echo $obj1->correo; ?>" disabled><br>
+                <p> <?php echo $obj1->correo; ?></p>
 
                 <label>STATUS</label><br>
                 <select name="status" disabled>
@@ -75,16 +72,16 @@
                 <h2>Tabla Domicilio</h2>
 
                 <label>CALLE</label><br>
-                <input type="text" name="calle" value="<?php echo $obj2->calle; ?>" disabled><br>
+                <p> <?php echo $obj2->calle; ?></p>
 
                 <label>Numero externo</label><br>
-                <input type="number" name="num_ext" value="<?php echo $obj2->num_ext; ?>" disabled><br>
+                <p> <?php echo $obj2->num_ext; ?></p>
 
                 <label>Numero interno</label><br>
-                <input type="number" name="num_int" value="<?php echo $obj2->num_int; ?>" disabled><br>
+                <p> <?php echo $obj2->num_int; ?></p>
 
                 <label>MUNICIPIO</label><br>
-                <input type="text" name="municipio" value="<?php echo $obj2->municipio; ?>" disabled><br>
+                <p> <?php echo $obj2->municipio; ?></p>
 
                 <label>LOCALIDAD</label><br>
                 <input type="text" name="localidad" value="<?php echo $obj2->localidad; ?>" disabled><br>

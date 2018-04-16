@@ -17,7 +17,7 @@
 
     <div class="header">
         <div class="centrar">
-            <img src="http://localhost/expediente/images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png">
+            <img src="../../images/logo2.png">
             
             <h1>Registros Clínica David</h1>
         </div>
@@ -71,19 +71,15 @@
                 <h2>Tabla Usuario</h2>
 
                 <label>NOMBRE COMPLETO</label><br>
-                <input type="text" name="name" value="<?php echo $obj1->name; ?>"  disabled><br>
+                <p> <?php echo $obj1->name; ?></p>
 
                 <label>CURP</label><br>
-                <input type="text" name="curp" value="<?php echo $obj1->curp; ?>" disabled><br>
+                <p> <?php echo $obj1->curp; ?></p>
 
                 <label>CARGO: <?php echo $obj1->cargo; ?></label><br>
                 
-                
-                
-
-                
                 <label>CORREO</label><br>
-                <input type="text" name="correo" value="<?php echo $obj1->correo; ?>" disabled><br>
+                <p> <?php echo $obj1->correo; ?></p>
 
                 <label>STATUS</label><br>
                 <select name="status" disabled>
@@ -95,45 +91,45 @@
                 <h2>Tabla Domicilio</h2>
 
                 <label>CALLE</label><br>
-                <input type="text" name="calle" value="<?php echo $obj2->calle; ?>" disabled><br>
+                <p><?php echo $obj2->calle; ?></p>
 
                 <label>Numero externo</label><br>
-                <input type="number" name="num_ext" value="<?php echo $obj2->num_ext; ?>" disabled><br>
+                <p><?php echo $obj2->num_ext; ?></p>
 
                 <label>Numero interno</label><br>
-                <input type="number" name="num_int" value="<?php echo $obj2->num_int; ?>" disabled><br>
+                <p><?php echo $obj2->num_int; ?></p>
 
                 <label>MUNICIPIO</label><br>
-                <input type="text" name="municipio" value="<?php echo $obj2->municipio; ?>" disabled><br>
+                <p><?php echo $obj2->municipio; ?></p>
 
                 <label>LOCALIDAD</label><br>
-                <input type="text" name="localidad" value="<?php echo $obj2->localidad; ?>" disabled><br>
+                <p><?php echo $obj2->localidad; ?></p>
 
                 <label>COLONIA</label><br>
-                <input type="text" name="colonia" value="<?php echo $obj2->colonia; ?>" disabled><br>
+                <p><?php echo $obj2->colonia; ?></p>
 
                 <label>CODIGO POSTAL</label><br>
-                <input type="number" name="cod_postal" value="<?php echo $obj2->cod_postal; ?>" disabled><br>
+                <p><?php echo $obj2->cod_postal; ?></p>
 
                 <label>CELULAR 1</label><br>
-                <input type="number" name="cel_uno" value="<?php echo $obj2->cel_uno; ?>" disabled><br>
+                <p><?php echo $obj2->cel_uno; ?></p>
 
                 <label>CELULAR 2</label><br>
-                <input type="number" name="cel_dos" value="<?php echo $obj2->cel_dos; ?>" disabled><br>
+                <p><?php echo $obj2->cel_dos; ?></p>
                 
                 <h2>Tabla PACIENTE</h2>
 
                     <label>NOMBRE:</label><br>
-                    <input type="text" name="nombre" value="<?php echo $obj3->nombre; ?>"  disabled><br>
+                    <p><?php echo $obj3->nombre; ?></p>
 
                     <label>Apellido Paterno</label><br>
-                    <input type="text" name="ape_pat" value="<?php echo $obj3->ape_pat; ?>"  disabled><br>
+                    <p><?php echo $obj3->ape_pat; ?></p>
 
                     <label>Apellido Materno</label><br>
-                    <input type="text" name="ape_mat" value="<?php echo $obj3->ape_mat; ?>"  disabled><br>
+                    <p><?php echo $obj3->ape_mat; ?></p>
 
                     <label>Fecha de Nacimiento:</label><br>
-                    <input type="date" name="fecnac" value="<?php echo $obj3->fecnac; ?>"  disabled><br>
+                    <p><?php echo $obj3->fecnac; ?></p>
 
                     <label>SEXO:</label><br>
                     <select name="sexo"  disabled>
@@ -143,32 +139,33 @@
                     </select><br>
 
                     <label>DIRECCION </label><br>
-                    <input type="text" name="direccion" value="<?php echo $obj3->direccion; ?>" disabled><br>
+                    <p><?php echo $obj3->direccion; ?></p>
 
                     <label>TELEFONO </label><br>
-                    <input type="phone" name="telefono" value="<?php echo $obj3->telefono; ?>" disabled><br>
+                    <p><?php echo $obj3->telefono; ?></p>
 
                     <label>NIVEL ECONOMICO </label><br>
                     <select name="nivel_eco"  disabled>
                         <option value="<?php echo $obj3->nivel_eco; ?>"> <?php echo $obj3->nivel_eco; ?></option>
-                        <option value="pobre">pobre</option>
-                        <option value="rico">rico</option>
+                        <option value="alto">alto</option>
+                        <option value="medio">medio</option>
+                        <option value="bajo">bajo</option>
                     </select><br>
 
                     <label>VIVIENDA </label><br>
-                    <input type="text" name="vivienda" value="<?php echo $obj3->vivienda; ?>" disabled><br>
+                    <p><?php echo $obj3->vivienda; ?></p>
 
                     <label>TIPO SANGUINEO </label><br>
-                    <input type="text" name="tipo_sang" value="<?php echo $obj3->tipo_sang; ?>" disabled><br>
+                    <p><?php echo $obj3->tipo_sang; ?></p>
 
                     <label>DISCAPACIDAD </label><br>
-                    <input type="text" name="discapacidad" value="<?php echo $obj3->discapacidad; ?>" disabled><br>
+                    <p><?php echo $obj3->discapacidad; ?></p>
 
                     <label>ETNIA </label><br>
-                    <input type="text" name="etnia" value="<?php echo $obj3->etnia; ?>" disabled><br>
+                    <p><?php echo $obj3->etnia; ?></p>
 
                     <label>RELIGION </label><br>
-                    <input type="text" name="religion" value="<?php echo $obj3->religion; ?>" disabled><br>
+                    <p><?php echo $obj3->religion; ?></p>
                                 
                 
 

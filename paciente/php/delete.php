@@ -12,7 +12,7 @@
 
 <div class="header">
     <div class="centrar">
-        <img src="http://localhost/expediente/images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png">
+        <img src=../../images/logo2.png">
         
         <h1>Registros Clínica David</h1>
     </div>
@@ -21,7 +21,7 @@
 
 <div class="containerP">
     <div class="menu">
-    <a href="http://localhost/expediente/menuroot2/">REGRESAR</a>
+    <a href="http://localhost/UPExpedientes/app/">REGRESAR</a>
         
         <br><br><br>
         <a href="">Salir</a>
@@ -48,7 +48,7 @@
         <h3>¿Confirma eliminar Usuario?></h3>
 
         <a href="php/delete.php?id=<?php echo $obj->id; ?>">ELIMINAR </a><br>
-        <a href="http://localhost/expediente/menuroot2/">REGRESAR</a>
+        <a href="http://localhost/UPExpedientes/app/">REGRESAR</a>
     </div>
 </div>
     

@@ -1,4 +1,4 @@
-<a href="index.php">USUARIOS</a>
+<a href="index.php">USUARIO</a>
 <a href="recetas/">RECETAS</a>
 <a href="alergias/">ALERGIAS</a>
 <a href="historial/">HISTORIAL</a>

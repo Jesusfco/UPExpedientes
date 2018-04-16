@@ -11,7 +11,7 @@
 
     <div class="header">
         <div class="centrar">
-            <img src="http://localhost/expediente/images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png">
+            <img src="../../images/logo2.png">
             
             <h1>Registros Clínica David</h1>
         </div>
@@ -46,6 +46,9 @@
 
                     
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>" >
+
+                    <label>MEDICO</label><br>
+                    <input type="number" name="medico_id"><br>
 
                     <label>FECHA</label><br>
                     <input type="date" name="fecha"><br>
