@@ -84,33 +84,33 @@
                 <p> <?php echo $obj2->municipio; ?></p>
 
                 <label>LOCALIDAD</label><br>
-                <input type="text" name="localidad" value="<?php echo $obj2->localidad; ?>" disabled><br>
+                <p><?php echo $obj2->localidad; ?></p>
 
                 <label>COLONIA</label><br>
-                <input type="text" name="colonia" value="<?php echo $obj2->colonia; ?>" disabled><br>
+                <p><?php echo $obj2->colonia; ?></p>
 
                 <label>CODIGO POSTAL</label><br>
-                <input type="number" name="cod_postal" value="<?php echo $obj2->cod_postal; ?>" disabled><br>
+                <p><?php echo $obj2->cod_postal; ?></p>
 
                 <label>CELULAR 1</label><br>
-                <input type="number" name="cel_uno" value="<?php echo $obj2->cel_uno; ?>" disabled><br>
+                <p><?php echo $obj2->cel_uno; ?></p>
 
                 <label>CELULAR 2</label><br>
-                <input type="number" name="cel_dos" value="<?php echo $obj2->cel_dos; ?>" disabled><br>
+                <p><?php echo $obj2->cel_dos; ?></p>
                 
                 <h2>Tabla PACIENTE</h2>
 
                     <label>NOMBRE:</label><br>
-                    <input type="text" name="nombre" value="<?php echo $obj3->nombre; ?>"  disabled><br>
+                    <p><?php echo $obj3->nombre; ?></p>
 
                     <label>Apellido Paterno</label><br>
-                    <input type="text" name="ape_pat" value="<?php echo $obj3->ape_pat; ?>"  disabled><br>
+                    <p><?php echo $obj3->ape_pat; ?></p>
 
                     <label>Apellido Materno</label><br>
-                    <input type="text" name="ape_mat" value="<?php echo $obj3->ape_mat; ?>"  disabled><br>
+                    <p><?php echo $obj3->ape_mat; ?></p>
 
                     <label>Fecha de Nacimiento:</label><br>
-                    <input type="date" name="fecnac" value="<?php echo $obj3->fecnac; ?>"  disabled><br>
+                    <p><?php echo $obj3->fecnac; ?></p>
 
                     <label>SEXO:</label><br>
                     <select name="sexo"  disabled>
@@ -120,16 +120,17 @@
                     </select><br>
 
                     <label>DIRECCION </label><br>
-                    <input type="text" name="direccion" value="<?php echo $obj3->direccion; ?>" disabled><br>
+                    <p><?php echo $obj3->direccion; ?></p>
 
                     <label>TELEFONO </label><br>
-                    <input type="phone" name="telefono" value="<?php echo $obj3->telefono; ?>" disabled><br>
+                    <p><?php echo $obj3->telefono; ?></p>
 
                     <label>NIVEL ECONOMICO </label><br>
                     <select name="nivel_eco"  disabled>
                         <option value="<?php echo $obj3->nivel_eco; ?>"> <?php echo $obj3->nivel_eco; ?></option>
-                        <option value="pobre">pobre</option>
-                        <option value="rico">rico</option>
+                        <option value="alto">alto</option>
+                        <option value="medio">medio</option>
+                        <option value="bajo">bajo</option>
                     </select><br>
 
                     <label>VIVIENDA </label><br>
