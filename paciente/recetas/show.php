@@ -11,7 +11,7 @@
 
     <div class="header">
         <div class="centrar">
-            <img src="http://localhost/expediente/images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png">
+            <img src="../../images/logo2.png">
             
             <h1>Registros Clínica David</h1>
         </div>
@@ -30,8 +30,6 @@
 
                 $id = $_GET['id'];
                 $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";              
-
-                $sql = "SELECT * FROM receta WHERE id = '" . $id . "' ";
                 $res = $conn->query($sql);
                 $obj = $res->fetch_object();
                 

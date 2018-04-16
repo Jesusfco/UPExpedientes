@@ -11,7 +11,7 @@
 
     <div class="header">
         <div class="centrar">
-        <img src="../../images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png">
+        <img src="../../images/logo2.png">
             
             <h1>Registros Clínica David</h1>
         </div>

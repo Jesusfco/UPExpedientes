@@ -32,6 +32,6 @@ VALUES (NULL, '". $_POST['name'] ."', '". $_POST['curp'] ."', '". $_POST['passwo
 
   $conn->query($sql);
 
-  header("Location: http://localhost/expediente/menuroot2/");
+  header("Location: http://localhost/UPExpedientes/app/");
 
 
