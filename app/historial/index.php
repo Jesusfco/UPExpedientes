@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include "../php/mostrar.php"; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -41,8 +42,10 @@
     ?>
     <div class="contenedorPrincipal">
 
+    <?php include "../php/creaciones.php"; ?>
+
         <h1>Historial</h1>
-        <a href="create.php">CREAR HISTORIAL</a>
+    
         <form method="POST" action="">
             <input type="search" name="search" placeholder="ID USUARIO">
         </form>

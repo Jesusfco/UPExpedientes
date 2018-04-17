@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+function mostrar(id) {
+  obj = document.getElementById(id);
+  obj.style.visibility = (obj.style.visibility == 'hidden') ? 'visible' : 'hidden';
+}
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PANEL ADMINISTRACION || RECETAS </title>
-    <link rel="stylesheet" href="../css/styles.css
-    ">
+    <link rel="stylesheet" href="../css/styles.css">
+
 </head>
 <body>
 
@@ -46,8 +52,10 @@
 
 <div class="contenedorPrincipal">
 
+<?php include "../php/creaciones.php"; ?>
+
+
 <h1>Alergias </h1>
-<a href="create.php">Crear Alergia</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>

@@ -41,6 +41,7 @@
     ?>
     <div class="contenedorPrincipal">
     <h1> Crear Historial </h1>
+
     <form method="POST" action="">
     
         <label>ID USUARIO PACIENTE</label><br>
@@ -52,8 +53,7 @@
         <label>Ocupación<label>
         <input name="ocupacion" type="text"><br>
 
-        <label>Heredo Familiares<label>
-        <input name="heredo_familiares" type="text"><br>
+        
 
         <label>Vivienda<label>
         <input name="vivienda" type="text"><br>
@@ -231,7 +231,7 @@
 
         <input type="submit" name="submit">
 
-    </form>    
+        </form>    
 
     </div>
 </div>

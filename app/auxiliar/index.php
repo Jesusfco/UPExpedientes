@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include "../php/mostrar.php"; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PANEL ADMINISTRACION || RECETAS </title>
-    <link rel="stylesheet" href="../css/styles.css
-    ">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
 
@@ -46,8 +46,10 @@
 
 <div class="contenedorPrincipal">
 
+<?php include "../php/creaciones.php"; ?>
+
+
 <h1>Auxiliar Dianostico</h1>
-<a href="create.php">Crear Auxiliar Diagnostico</a>
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
