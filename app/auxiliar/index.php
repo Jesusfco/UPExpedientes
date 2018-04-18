@@ -21,7 +21,7 @@
 
 <div class="containerP">
     <div class="menu">
-        <?php include "menu.php" ?>
+    <?php include "../menu.php" ?>
 
     </div>
 

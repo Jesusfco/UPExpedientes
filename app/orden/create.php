@@ -21,7 +21,7 @@
         <div class="containerP">
             <div class="menu">
                 <a href="index.php">REGRESAR</a><BR>
-                <?php include "menu.php" ?>
+                <?php include "../menu.php" ?>
             </div>
 
             <?php 
@@ -37,14 +37,9 @@
                     $id = $_GET['id'];                   
             ?>
             <div class="contenedorPrincipal">
-<<<<<<< HEAD
-              <p>En este apartado se prescribe los servicios y/o tratamientos para el paciente cuando requiere de una hospitalización.</p>
-                <h2>Crear Orden de receta</h2>
-=======
               <div align="center">En este apartado se prescribe los servicios y/o tratamientos para el paciente cuando requiere de una hospitalización.</div>
               <p>&nbsp;</p>
                 <h2>Crear Orden</h2>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
                 <form method="POST" action="">
 

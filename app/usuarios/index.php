@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php
-    include "php/mostrar.php"?>
+<!-- <?php
+    include "php/mostrar.php"?> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PANEL ADMINISTRACION || USUARIOS </title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     
 </head>
 <body>
 
 <div class="header">
     <div class="centrar">
-        <img src="../images/logo2.png">
+        <img src="../../images/logo2.png">
         
         <h1>Registros Clínica David</h1>
     </div>
@@ -23,13 +23,13 @@
 
 <div class="containerP">
     <div class="menu">
-        <?php include "menu.php" ?>
+    <?php include "../menu.php" ?>
 
     </div>
 
     <?php 
-        include "php/middleware.php";
-        include "php/sql.php";
+        include "../php/middleware.php";
+        include "../php/sql.php";
 
         $query = "SELECT * FROM usuario WHERE name LIKE '%%' ORDER BY name ASC";
 

@@ -21,7 +21,7 @@
         <div class="containerP">
             <div class="menu">
                 <a href="index.php">REGRESAR</a><BR>
-                <?php include "menu.php" ?>
+                <?php include "../menu.php" ?>
             </div>
 
             <?php 
