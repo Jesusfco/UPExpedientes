@@ -148,9 +148,15 @@
                     <label>NIVEL ECONOMICO </label>
                     <select name="nivel_eco">
                         <option value="<?php echo $obj3->nivel_eco; ?>"> <?php echo $obj3->nivel_eco; ?></option>
+<<<<<<< HEAD
                         <option value="Alto">Alto</option>
                         <option value="Medio">Medio</option>
 <option value="Bajo">Bajo</option>
+=======
+                        <option value="alto">alto</option>
+                        <option value="medio">medio</option>
+                        <option value="bajo">bajo</option>
+>>>>>>> e9f65946c3a21280baa5aef887879335555c529f
                     </select><br>
 
                     <label>VIVIENDA </label>

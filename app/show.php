@@ -6,12 +6,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+function mostrar(id) {
+  obj = document.getElementById(id);
+  obj.style.visibility = (obj.style.visibility == 'hidden') ? 'visible' : 'hidden';
+}
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PANEL ADMINISTRACION || USUARIOS </title>
-    <link rel="stylesheet" href="css/styles.css
-    ">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -56,17 +61,6 @@
             <div class="contenedorPrincipal">
 
                 <h2>Usuario <?php echo $obj1->name; ?></h2>
-
-                <div class="showLinks">
-                    <a href="recetas/create.php?id=<?php echo $obj1->id; ?>">Asignar Receta</a>
-                    <a href="orden/create.php?id=<?php echo $obj1->id; ?>">Asignar Orden</a>
-                    <a href="muestras/create.php?id=<?php echo $obj1->id; ?>">Asignar Muestra</a>
-                    <a href="alergias/create.php?id=<?php echo $obj1->id; ?>">Asignar Alergia</a>
-                    <a href="historial/create.php?id=<?php echo $obj1->id; ?>">Asignar Historial</a>
-                    <a href="citas/create.php?id=<?php echo $obj1->id; ?>">Asignar Cita</a>
-                    <a href="casos/create.php?id=<?php echo $obj1->id; ?>">Asignar Caso N.</a>
-                    <a href="auxiliar/create.php?id=<?php echo $obj1->id; ?>">Asignar Auxiliar D.</a>
-                </div>
                 
                 <div class="form">
                     <h2>Tabla Usuario</h2>
@@ -152,8 +146,9 @@
                         <label>NIVEL ECONOMICO </label><br>
                         <select name="nivel_eco"  disabled>
                             <option value="<?php echo $obj3->nivel_eco; ?>"> <?php echo $obj3->nivel_eco; ?></option>
-                            <option value="pobre">pobre</option>
-                            <option value="rico">rico</option>
+                            <option value="alto">alto</option>
+                            <option value="medio">medio</option>
+                            <option value="bajo">bajo</option>
                         </select><br>
 
                         <label>VIVIENDA </label><br>
