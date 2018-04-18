@@ -30,17 +30,10 @@ $HTML = "
 
 <TABLE BORDER WIDTH='100%' HEIGHT='50%'>
 <Tr bgcolor=#AED6F1  align='center'> 
-<<<<<<< HEAD
-<Td>RESUMEN CLINICO</Td><Td align='justify'> CASO # " . $obj->id ."</Td>
-</Tr>
-<tr>
-<th colspan='2' scope='rowgroup' align='justify'>" . $obj->res_clinico . "</th>
-=======
 <Td>RESUMEN CLINICO</Td><Td> CASO # " . $obj->id ."</Td>
 </Tr>
 <tr>
 <th colspan='2' scope='rowgroup'>" . $obj->res_clinico . "</th>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 </tr>
 <br>
 <br>
