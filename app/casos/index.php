@@ -47,20 +47,20 @@
 
 <div class="contenedorPrincipal">
 
-<<<<<<< HEAD
-<?php include "../php/creaciones2.php"; ?>
 
-<h1>RESUMEN CLÍNICO</h1>
-=======
-<<<<<<< HEAD
-<h1>RESUMEN CLÍNICO</h1>
-<a href="create.php">Crear Resumen Clínico </a>
-=======
-<?php include "../php/creaciones.php"; ?>
+<!-- <?php include "../php/creaciones2.php"; ?> -->
+
+
+
+<!-- <h1>RESUMEN CLÍNICO</h1> -->
+
+
+
 
 <h1>CASOS NOTIFICABLES</h1>
->>>>>>> e9f65946c3a21280baa5aef887879335555c529f
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
+
+<a href="create.php">Crear Resumen Clínico </a>
+
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">
         </form>
@@ -85,7 +85,7 @@
                 <td>". $obj->id   ."</td>
                 <td>". $obj->user_id   ."</td>
                 <td>". $obj->creator_id   ."</td>
-                <td>". $obj->res_clinico   ."</td>                
+                <td>". substr($obj->res_clinico,0, 100)   ."</td>                
                 <td>
                     <a href='php/pdf.php?id=". $obj->id ."'>PDF</a><br>
                     <a href='update.php?id=". $obj->id ."'>Modificar</a><br>
