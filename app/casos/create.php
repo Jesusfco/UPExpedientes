@@ -39,7 +39,7 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>Crear Caso Notificables</h2>
+                <h2>Crear Resumen Clinico</h2>
 
                 <form method="POST" action="">
 

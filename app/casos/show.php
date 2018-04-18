@@ -40,7 +40,7 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>CASO NOTIFICABLE # <?php echo $obj->id; ?> </h2>
+                <h2>RESUMEN CLÍNICO # <?php echo $obj->id; ?> </h2>
             
                     <h5> USUARIO PACIENTE</h5>
                     <p><?php echo $obj->user_id; ?></p>

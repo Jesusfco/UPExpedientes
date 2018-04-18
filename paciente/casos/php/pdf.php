@@ -14,26 +14,37 @@ $HTML = "
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='UTF-8'>
+    <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Document</title>
 </head>
 <body>
-    <img src='../../../images/1ec3ed77-94bc-4b24-b1f9-13da8646b9f5.png'>
-    <h1>Clinica David || CASO # " . $obj->id ." </h1>
+   <img style='float:right; margin:10px;' src='../../../images/logo2.png'/> SECRETARIA DE SALUD DE CHIAPAS
+    <hr>
 
-    <h3>PACIENTE " . $obj->user_id . "</h3>    
+    <h6 align='left'>PACIENTE: " . $obj->user_id . "</h6>    
 
-    <h3>DOCTOR " . $obj->creator_id . "</h3>
-    
+    <h6 align='right'>DOCTOR: " . $obj->creator_id . "</h6>
+   
 
-    <h3>RESUMEN CLINICO</h3>
-    <p>" . $obj->res_clinico . "</p>
-
-    
+<TABLE BORDER WIDTH='100%' HEIGHT='50%'>
+<Tr bgcolor=#AED6F1  align='center'> 
+<Td>RESUMEN CLINICO</Td><Td> CASO # " . $obj->id ."</Td>
+</Tr>
+<tr>
+<th colspan='2' scope='rowgroup'>" . $obj->res_clinico . "</th>
+</tr>
+<br>
+<br>
+<br>
+<br>
+<br>
     <p><strong>Fecha de Creacion:</strong> " . $obj->created_at . "</p>
-    
+    <br>
+    <br>
+    <br>
+
 
 </body>
 </html> ";

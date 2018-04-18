@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PANEL ADMINISTRACION || CASO NOTIFICABLE ACTUALIZAR </title>
+    <title>PANEL ADMINISTRACION || RESUMEN CLÍNICO ACTUALIZAR </title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
             ?>
             <div class="contenedorPrincipal">
 
-                <h2>ACTUALIZAR CASO NOTIFICABLE</h2>
+                <h2>ACTUALIZAR </h2>
 
                 <form method="POST" action="">
 

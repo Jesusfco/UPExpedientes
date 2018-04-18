@@ -39,6 +39,8 @@
             ?>
             <div class="contenedorPrincipal">
 
+                <h3 align="center"><strong> Este apartado solicita aquellos examenes que el médico  puede servir para apoyar o descartar el diagnóstico.</strong></h3>
+                <p>&nbsp;</p>
                 <h2>Crear Auxiliar Diagnóstico</h2>
 
                 <form method="POST" action="">

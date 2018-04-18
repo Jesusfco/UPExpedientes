@@ -37,14 +37,15 @@
                     $id = $_GET['id'];                   
             ?>
             <div class="contenedorPrincipal">
-
+              <div align="center">En este apartado se prescribe los servicios y/o tratamientos para el paciente cuando requiere de una hospitalización.</div>
+              <p>&nbsp;</p>
                 <h2>Crear Orden</h2>
 
                 <form method="POST" action="">
 
                 
 
-                    <label>ID USUARIO PACIENTE</label><br>
+                  <label>ID USUARIO PACIENTE</label><br>
                     <input type="number" name="user_id" value="<?php echo $id; ?>" required><br>
 
                     <label>FECHA</label><br>

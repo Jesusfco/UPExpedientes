@@ -128,9 +128,9 @@
 
                 <label>NIVEL ECONOMICO </label>
                 <select name="nivel_eco">        
-                    <option value="alto">alto</option>
-                    <option value="medio">medio</option>
-                    <option value="bajo">bajo</option>
+                    <option value="alto">Alto</option>
+                    <option value="medio">Medio</option>
+                    <option value="bajo">Bajo</option>
                 </select><br>
 
                 <label>VIVIENDA </label>

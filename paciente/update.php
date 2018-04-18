@@ -17,7 +17,7 @@
 
     <div class="header">
         <div class="centrar">
-            <img src="../images/logo2.png">
+            <img src="../../images/logo2.png">
             
             <h1>Registros Clínica David</h1>
         </div>
@@ -30,17 +30,17 @@
 
         <div class="containerP">
             <div class="menu">
-                <a href="index.php">REGRESAR</a>
+                <a href="index.php">REGRESAR</a><br>
                 <?php include "menu.php" ?>
 
             </div>
 
             <?php                                                 
-                $id = $_GET['id'];
+                
 
-                $query1 = "SELECT * FROM usuario WHERE id = '" . $id . "' ";
-                $query2 = "SELECT * FROM domicilo WHERE user_id = " . $id ;
-                $query3 = "SELECT * FROM paciente WHERE user_id = " . $id ;
+                $query1 = "SELECT * FROM usuario WHERE id = '" . $_SESSION['id'] . "' ";
+                $query2 = "SELECT * FROM domicilo WHERE user_id = " . $_SESSION['id'] ;
+                $query3 = "SELECT * FROM paciente WHERE user_id = " . $_SESSION['id'] ;
 
 
                 //SI EL FORMULARIO SE ENVIO
@@ -148,9 +148,8 @@
                     <label>NIVEL ECONOMICO </label>
                     <select name="nivel_eco">
                         <option value="<?php echo $obj3->nivel_eco; ?>"> <?php echo $obj3->nivel_eco; ?></option>
-                        <option value="Alto">Alto</option>
-                        <option value="Medio">Medio</option>
-<option value="Bajo">Bajo</option>
+                        <option value="pobre">pobre</option>
+                        <option value="rico">rico</option>
                     </select><br>
 
                     <label>VIVIENDA </label>

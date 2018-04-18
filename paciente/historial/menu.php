@@ -3,7 +3,7 @@
 <a href="../alergias/">ALERGIAS</a>
 <a href="index.php">HISTORIAL</a>
 <a href="../citas/">CITAS</a>
-<a href="../casos/">CASOS NOTIFICABLES</a>
+<a href="../casos/">RESUMEN CLÍNICO</a>
 
         
 <br><br>

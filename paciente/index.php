@@ -12,7 +12,7 @@
 
 <div class="header">
     <div class="centrar">
-        <img src="../../images/logo2.png">
+        <img src="../images/logo2.png">
         
         <h1>Registros Clínica David</h1>
     </div>
@@ -134,19 +134,19 @@
                     </select><br>
 
                     <label>VIVIENDA </label><br>
-                    <input type="text" name="vivienda" value="<?php echo $obj3->vivienda; ?>" disabled><br>
+                    <p><?php echo $obj3->vivienda; ?></p>
 
                     <label>TIPO SANGUINEO </label><br>
-                    <input type="text" name="tipo_sang" value="<?php echo $obj3->tipo_sang; ?>" disabled><br>
+                    <p><?php echo $obj3->tipo_sang; ?></p>
 
                     <label>DISCAPACIDAD </label><br>
-                    <input type="text" name="discapacidad" value="<?php echo $obj3->discapacidad; ?>" disabled><br>
+                    <p><?php echo $obj3->discapacidad; ?></p>
 
                     <label>ETNIA </label><br>
-                    <input type="text" name="etnia" value="<?php echo $obj3->etnia; ?>" disabled><br>
+                    <p><?php echo $obj3->etnia; ?></p>
 
                     <label>RELIGION </label><br>
-                    <input type="text" name="religion" value="<?php echo $obj3->religion; ?>" disabled><br>
+                    <p><?php echo $obj3->religion; ?></p>
     </div>
 </div>
     
