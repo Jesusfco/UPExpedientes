@@ -65,6 +65,19 @@ function mostrar(id) {
             <div class="contenedorPrincipal">
 
                 <h2>Usuario <?php echo $obj1->name; ?></h2>
+
+                <div class="showLinks">
+                    <!-- <a href="../usuarios/create.php?id=<?php echo $obj1->id; ?>">Crear Usuario </a> -->
+                    <a href="../recetas/create.php?id=<?php echo $obj1->id; ?>">Crear Receta</a>
+                    <a href="../orden/create.php?id=<?php echo $obj1->id; ?>">Crear Orden</a>
+                    <a href="../muestras/create.php?id=<?php echo $obj1->id; ?>">Crear Muestra</a>
+                    <a href="../alergias/create.php?id=<?php echo $obj1->id; ?>">Crear Alergia</a>
+                    <a href="../historial/create.php?id=<?php echo $obj1->id; ?>">Crear Historial</a>
+                    <a href="../citas/create.php?id=<?php echo $obj1->id; ?>">Crear Cita</a>
+                    <a href="../casos/create.php?id=<?php echo $obj1->id; ?>">Crear Resumen Clínico</a>
+                    <a href="../auxiliar/create.php?id=<?php echo $obj1->id; ?>">Crear Auxiliar D.</a>
+
+                </div>
                 
                 <div class="form">
                     <h2>Tabla Usuario</h2>

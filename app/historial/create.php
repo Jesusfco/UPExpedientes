@@ -46,14 +46,10 @@
                         
     ?>
     <div class="contenedorPrincipal">
-<<<<<<< HEAD
       <h4>HISTORIA CLÍNICA, EN CUMPLIMIENTO CON LA "Norma Oficial Mexicana NOM-004-SSA3-2012, Del expediente clínico."</h4>
       <p align="justify">Como parte de una atención profesional nos hemos permitido hacerle las siguientes preguntas. La información aquí solicitada es confidencial y constituye un requisito médico-legal para la integración de su expediente médico, de utilidad para la toma de decisiones y el tratamiento adecuado en su atención médica. Le pedimos conteste con veracidad.</p>
       <h1>&nbsp; </h1>
     <h1 align="center">Crear Historial </h1>
-=======
-    <h1> Crear Historial </h1>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
     <form method="POST" action="">
     
@@ -76,13 +72,10 @@
           </p>
           <p>HEREDO FAMILIARES<br>
 
-<<<<<<< HEAD
         <label>Heredo Familiares<label>
         <textarea name="heredo_familiares" id="heredofamiliares"></textarea>
           </p>
           <p>NO PATOLÓGICOS<br>
-=======
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
         
 
         <label>Vivienda<label>
@@ -323,7 +316,6 @@
         <br>
 
         <input type="submit" name="submit">
-<<<<<<< HEAD
           </p>
           </p>
           </p>
@@ -332,10 +324,6 @@
         </p>
         </p>
     </form>    
-=======
-
-        </form>    
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
     </div>
 </div>
