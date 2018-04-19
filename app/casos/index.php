@@ -63,7 +63,7 @@
 
 <h1>CASOS NOTIFICABLES</h1>
 
-<a href="create.php">Crear Resumen Clínico </a>
+<a href="create.php">Crear Caso Notificable </a>
 
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">

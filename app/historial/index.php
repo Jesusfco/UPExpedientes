@@ -48,11 +48,7 @@
     ?>
     <div class="contenedorPrincipal">
 
-<<<<<<< HEAD
     <?php include "../php/creaciones2.php"; ?>
-=======
-    <?php include "../php/creaciones.php"; ?>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
         <h1>Historial</h1>
     

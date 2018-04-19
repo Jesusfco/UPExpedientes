@@ -52,15 +52,9 @@
 
 <div class="contenedorPrincipal">
 
-<<<<<<< HEAD
 <?php include "../php/creaciones2.php"; ?>
 
 <h1>ORDEN DE RECETA</h1>
-=======
-<?php include "../php/creaciones.php"; ?>
-
-<h1>ORDEN </h1>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
         <form method="POST" action="">
             <input type="text" name="search"  placeholder="id usuario">

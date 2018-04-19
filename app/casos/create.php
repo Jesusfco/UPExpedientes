@@ -45,11 +45,7 @@
             ?>
             <div class="contenedorPrincipal">
 
-<<<<<<< HEAD
                 <h2>Crear Resumen Clínico</h2>
-=======
-                <h2>Crear Resumen Clinico</h2>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
                 <form method="POST" action="">
 

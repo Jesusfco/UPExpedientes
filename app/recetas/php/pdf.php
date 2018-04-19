@@ -1,8 +1,9 @@
 <?php
 
 require_once('../../../dompdf/dompdf_config.inc.php');
+
+include "../../../php/sql.php";
 include "../../php/middleware.php";
-include "../../php/sql.php";
 
 $id = $_GET['id'];                
 
@@ -11,7 +12,7 @@ $recetas = setUserIdCreatorId($conn->query($sql), $conn);
 $obj = $recetas[0];
 
 $HTML = "
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>
 <html lang='en'>
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
@@ -20,6 +21,8 @@ $HTML = "
     <title>Document</title>
 </head>
 <body>
+
+    <style> * { font-family: times !important } </style>
    
     <img style='float:right; margin:10px;' src='../../../images/logo2.png'/> SECRETARIA DE SALUD DE CHIAPAS
     <hr>
@@ -35,7 +38,7 @@ $HTML = "
     PLAN TERAPEUTICO
 
 <table border bgcolor=#AED6F1>
-<Tr> <Td>MEDICAMENTO</Td><Td> UNIDAD DE MEDIDA</Td><Td> DOSIS</Td><Td>FRECUENCIA</Td><Td>VIA DE ADMINISTRACION</Td></Tr>
+<Tr> <Td>MEDICAMENTO</Td><Td> UNIDAD DE MEDIDA</Td><Td> DOSIS</Td><Td>FRECUENCIA</Td><Td>VIA DE ADMINISTRACIÓN</Td></Tr>
 
 <Tr bgcolor=#F7F9F9  align='center'> 
 <Td>" . $obj->medicamento . "</Td><Td>" . $obj->unidad_medida . "</Td><Td>" . $obj->dosis . "</Td><Td>" . $obj->frecuencia . "</Td><Td>" . $obj->via_administracion . "</Td>
@@ -65,10 +68,10 @@ $HTML = "
 </html> ";
 
 
-$HTML=utf8_encode($HTML);
+// $HTML=utf8_encode($HTML);
 
 $dompdf = new DOMPDF();
-$dompdf->load_html($HTML);
+$dompdf->load_html($HTML, 'UTF-8');
 ini_set("memory_limit", "128M");
 $dompdf->render();
-$dompdf->stream("RECETA " . $obj->user_id . date("Y-n-j H:i:s") . ".pdf");
+$dompdf->stream("RECETA " . $obj->user_id . "-". $obj->id . ".pdf");

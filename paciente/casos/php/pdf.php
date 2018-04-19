@@ -30,17 +30,10 @@ $HTML = "
 
 <TABLE BORDER WIDTH='100%' HEIGHT='50%'>
 <Tr bgcolor=#AED6F1  align='center'> 
-<<<<<<< HEAD
 <Td>RESUMEN CLINICO</Td><Td align='justify'> CASO # " . $obj->id ."</Td>
 </Tr>
 <tr>
 <th colspan='2' scope='rowgroup' align='justify'>" . $obj->res_clinico . "</th>
-=======
-<Td>RESUMEN CLINICO</Td><Td> CASO # " . $obj->id ."</Td>
-</Tr>
-<tr>
-<th colspan='2' scope='rowgroup'>" . $obj->res_clinico . "</th>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 </tr>
 <br>
 <br>
@@ -57,10 +50,10 @@ $HTML = "
 </html> ";
 
 
-$HTML=utf8_encode($HTML);
+// $HTML=utf8_encode($HTML);
 
 $dompdf = new DOMPDF();
-$dompdf->load_html($HTML);
+$dompdf->load_html($HTML, 'UTF-8');
 ini_set("memory_limit", "128M");
 $dompdf->render();
-$dompdf->stream("caso_" . $obj->user_id . date("Y-n-j H:i:s") . ".pdf");
+$dompdf->stream("caso_" . $obj->id . ".pdf");

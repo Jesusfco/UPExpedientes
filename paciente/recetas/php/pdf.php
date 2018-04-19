@@ -1,8 +1,9 @@
 <?php
 
 require_once('../../../dompdf/dompdf_config.inc.php');
+
+include "../../../php/sql.php";
 include "../../php/middleware.php";
-include "../../php/sql.php";
 
 $id = $_GET['id'];                
 
@@ -65,10 +66,10 @@ $HTML = "
 </html> ";
 
 
-$HTML=utf8_encode($HTML);
+// $HTML=utf8_encode($HTML);
 
 $dompdf = new DOMPDF();
-$dompdf->load_html($HTML);
+$dompdf->load_html($HTML, 'UTF-8');
 ini_set("memory_limit", "128M");
 $dompdf->render();
-$dompdf->stream("RECETA " . $obj->user_id . date("Y-n-j H:i:s") . ".pdf");
+$dompdf->stream("RECETA " . $obj->user_id . "-". $obj->id . ".pdf");
