@@ -1,7 +1,11 @@
 <?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
     include "../php/middleware.php";
-    include "../php/sql.php"; 
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

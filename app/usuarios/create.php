@@ -1,3 +1,11 @@
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +33,7 @@
                 <?php include "../menu.php" ?>
             </div>
 
-            <?php 
-                include "php/middleware.php";
-                include "php/sql.php";                                                 
+            <?php                                             
 
                 //SI EL FORMULARIO SE ENVIO
                 if(isset($_POST['submit'])){                   

@@ -1,5 +1,3 @@
-<?php include "../../php/url.php" ?>
-
 <a href="<?php echo $url; ?>app/usuarios/">USUARIOS</a>
 <a href="<?php echo $url; ?>app/recetas/">RECETAS</a>
 <a href="<?php echo $url; ?>app/orden/"> ORDEN DE RECETA</a>

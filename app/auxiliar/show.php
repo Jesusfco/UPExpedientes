@@ -1,3 +1,11 @@
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +29,10 @@
         <div class="containerP">
             <div class="menu">
                 <a href="index.php">REGRESAR</a><br>
-                <?php include "menu.php" ?>
+                <?php include "../menu.php" ?>
             </div>
 
-            <?php 
-                include "../php/middleware.php";
-                include "../php/sql.php";                                                 
+            <?php                                                 
 
                 $id = $_GET['id'];                
 

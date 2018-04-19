@@ -1,3 +1,11 @@
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +36,6 @@
 
 <?php 
 
-    include "../php/middleware.php";
-    include "../php/sql.php";
-
-
     $sql = $query = "SELECT * FROM receta";
 
     if(isset($_POST['userid']))
@@ -46,11 +50,7 @@
 
 <div class="contenedorPrincipal">
 
-<<<<<<< HEAD
-<?php include "../php/creaciones2.php"; ?>
-=======
 <?php include "../php/creaciones.php"; ?>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
 <h1>RECETAS </h1>
 

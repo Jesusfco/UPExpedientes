@@ -1,6 +1,9 @@
 <?php 
-    include "php/middleware.php";
-    include "php/sql.php"; 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +34,7 @@
         <div class="containerP">
             <div class="menu">
                 <a href="index.php">REGRESAR</a>
-                <?php include "menu.php" ?>
+                <?php include "../menu.php" ?>
 
             </div>
 

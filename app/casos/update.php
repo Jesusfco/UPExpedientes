@@ -1,3 +1,11 @@
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +33,6 @@
             </div>
 
             <?php 
-                include "../php/middleware.php";
-                include "../php/sql.php";                                                 
 
                 $id = $_GET['id'];
                 // $sql = "SELECT * FROM alergias WHERE id = '" . $id . "' ";

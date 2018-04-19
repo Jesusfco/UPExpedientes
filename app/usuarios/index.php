@@ -1,3 +1,11 @@
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +36,6 @@
     </div>
 
     <?php 
-        include "../php/middleware.php";
-        include "../php/sql.php";
 
         $query = "SELECT * FROM usuario WHERE name LIKE '%%' ORDER BY name ASC";
 

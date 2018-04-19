@@ -1,3 +1,10 @@
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +31,7 @@
                 <?php include "../menu.php" ?>
             </div>
 
-            <?php 
-                include "../php/middleware.php";
-                include "../php/sql.php";                                                 
+            <?php                                                               
 
                 //SI EL FORMULARIO SE ENVIO
                 if(isset($_POST['submit'])){                   
@@ -38,14 +43,8 @@
                     $id = $_GET['id'];
             ?>
             <div class="contenedorPrincipal">
-<<<<<<< HEAD
-              <div class="contenedorPrincipal">
-                <h3 align="center"><strong> Este apartado solicita aquellos examenes que el médico  puede servir para apoyar o descartar el diagnóstico.</strong></h3>
-              </div>
-=======
 
                 <h3 align="center"><strong> Este apartado solicita aquellos examenes que el médico  puede servir para apoyar o descartar el diagnóstico.</strong></h3>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
                 <p>&nbsp;</p>
                 <h2>Crear Auxiliar Diagnóstico</h2>
 

@@ -1,3 +1,12 @@
+
+<?php 
+    
+    include '../../php/url.php';
+    include "../../php/sql.php";   
+    include "../php/middleware.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,8 +42,7 @@ function mostrar(id) {
 
 <?php 
 
-    include "../php/middleware.php";
-    include "../php/sql.php";
+    
 
 
     $sql = $query = "SELECT * FROM alergias";
@@ -52,11 +60,7 @@ function mostrar(id) {
 
 <div class="contenedorPrincipal">
 
-<<<<<<< HEAD
-<?php include "../php/creaciones2.php"; ?>
-=======
 <?php include "../php/creaciones.php"; ?>
->>>>>>> 27f3e984252e76b06b8e13fa3ac28af871bab733
 
 
 <h1>Alergias </h1>
