@@ -1,7 +1,5 @@
 <?php 
 
-
-
     $mensaje = '    
     <!DOCTYPE html>
     <html lang="en">
@@ -19,6 +17,7 @@
     require_once('PHPMailer/PHPMailerAutoload.php');
 
     $mail = new PHPMailer();
+    $mail->CharSet = 'UTF-8';
     $mail->isSMTP();
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'ssl';
