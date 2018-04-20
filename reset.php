@@ -74,94 +74,41 @@
         <div class="space">
         
             <div class="cardForm">
-                <form action="" method="POST">
-                    <h3>Iniciar Sesión</h3>
-                    <img src="">
-                    <div>
-                        <i class="material-icons">email</i>
-                        <input name="email" type="mail" placeholder="Correo" required autofocus><br>
-                        <i class="material-icons">security</i>
-                        <input name="password" type="password" placeholder="Contraseña" required><br>
-                        <a href="reset.php">¿Olvidate tu constraseña?</a><br>
-                        <button>Iniciar Sesión</button>
-                    </div>
-                </form> 
+                <br>
+                    <h3>Recuperar Contraseña</h3>
+                    
+                    <div class="row">
+					<div class="col-md-12">
+                        <?php 
+                            session_start();
+                            if(isset($_SESSION['reset']))
+                            {
+                                if($_SESSION['reset'] == true){
+                                    echo "
+                                    <script>
+                                        alert('REVISA TU CORREO PARA RECUPERAR TU CONTRASEÑA');
+                                    </script>";
+
+                                    $_SESSION['reset'] = false;
+                                }
+                            }
+                        ?>
+						<form method="POST" action="resetLogic.php">
+							
+							<div class="form-group">
+								<label for="name">Correo</label>
+								<input name="email" type="mail" class="form-control" id="email" required>
+							</div>
+							
+							<div class="form-group">
+								<input type="submit" class="btn btn btn-special" value="Enviar ">
+							</div>
+						</form>
+					</div>
+                
             </div>
     
         </div>        
 
     </body>
 </html>
-
-<?php 
-
-
-//VERIFICO SI YA ESTA AUTENTIFICADO
-session_start();
-if(isset($_POST['cargo'])){
-    $cargo = $_POST['cargo'];
-
-    if($cargo == 'doctor' || $cargo == 'ADMINISTRADOR')
-    header ('Location: menuroot2/');
-
-    else if($cargo == 'paciente')
-        header ('Location: pacientes/');
-
-}
-
-//VERIGICA SI SE MANDO EL FORMULARIO DE LOGIN
-if(!isset($_POST['email']))    
-    return;
-    //YA NO EJECURA LO SIGUIENTE
-
-
-
-include 'php/sql.php';
-//VERIFICO SI   UIERE ENTRAR COMO SUPERUSUARIO
-if($_POST['email'] == 'superusuario' && $_POST['password'] == '12345'){    
-    
-        $_SESSION['id']= 2;
-        $_SESSION['user']= "ADMINISTRADOR";
-        $_SESSION['email']= "ADMINISTRADOR";
-        $_SESSION['cargo']= "ADMINSITRADOR";
-        $_SESSION['status']= "activo";
-        $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
-        header ('Location: app/usuarios/');
-
-}
-
-
-$sql = "SELECT * FROM usuario WHERE correo = '". $_POST['email'] ."'";
-
-$res = $conn->query($sql);
-$obj = $res->fetch_object();
-
-//Si no hay coincidencias de correo hasta aqui ejecutas
-if($obj == false)    
-    return;
-
-if($obj->password ==  $_POST['password']){
-
-    if($obj->status == 'status') return;
-    $sql = "UPDATE `usuario` SET 
-        `fec_ingreso` = '" . date("Y-n-j") . "'
-        WHERE `usuario`.`id` = '" . $obj->id . "'";
-    
-        
-
-    $_SESSION['id']=$obj->id;
-    $_SESSION['user']=$obj->name;
-    $_SESSION['email']=$obj->correo;
-    $_SESSION['cargo']=$obj->cargo;
-    $_SESSION['status']= $obj->status;
-    $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
-
-    if($obj->cargo == 'doctor')
-    header ('Location: app/usuarios');
-
-    else if($obj->cargo == 'paciente')
-    header ('Location: paciente/');
-
-  
-}
-?>

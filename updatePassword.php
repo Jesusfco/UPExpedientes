@@ -1,10 +1,45 @@
+<?php 
+    include "php/sql.php";
+
+    if(!isset($_GET['key']))
+        header('LOCATION: index.html');
+
+    $sql = "SELECT * FROM `reset_passwords` WHERE key2 = '". $_GET['key'] ."'";
+    $res = $conn->query($sql);
+
+    // echo $sql;
+
+    // return;
+        
+    if($res == false){
+        header('LOCATION: index.html');
+    }
+
+    $obj = $res->fetch_object();
+
+    if(isset($_POST['password'])){
+        $sql = "UPDATE `usuario` SET 
+                        `password` = '" . $_POST['password'] . "'
+                        WHERE `usuario`.`id` = '" . $obj->user_id . "'";
+
+        $res = $conn->query($sql);   
+        
+        $sql = "DELETE FROM reset_passwords WHERE id = '" . $obj->include . "' ";
+        
+            $conn->query($sql);
+
+        header('LOCATION: login.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>RESTABLECE TU CONTRASEÑA</title>
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -74,94 +109,27 @@
         <div class="space">
         
             <div class="cardForm">
-                <form action="" method="POST">
-                    <h3>Iniciar Sesión</h3>
-                    <img src="">
-                    <div>
-                        <i class="material-icons">email</i>
-                        <input name="email" type="mail" placeholder="Correo" required autofocus><br>
-                        <i class="material-icons">security</i>
-                        <input name="password" type="password" placeholder="Contraseña" required><br>
-                        <a href="reset.php">¿Olvidate tu constraseña?</a><br>
-                        <button>Iniciar Sesión</button>
-                    </div>
-                </form> 
+                <br>
+                    <h3>Recuperar Contraseña</h3>
+                    
+                    <div class="row">
+					<div class="col-md-12">                        
+						<form method="POST" action="">
+							
+							<div class="form-group">
+								<label for="name">Nueva Contraseña</label>
+								<input name="password" type="password" class="form-control" id="email" required>
+							</div>
+							
+							<div class="form-group">
+								<input type="submit" class="btn btn btn-special" value="Enviar ">
+							</div>
+						</form>
+					</div>
+                
             </div>
     
         </div>        
 
     </body>
 </html>
-
-<?php 
-
-
-//VERIFICO SI YA ESTA AUTENTIFICADO
-session_start();
-if(isset($_POST['cargo'])){
-    $cargo = $_POST['cargo'];
-
-    if($cargo == 'doctor' || $cargo == 'ADMINISTRADOR')
-    header ('Location: menuroot2/');
-
-    else if($cargo == 'paciente')
-        header ('Location: pacientes/');
-
-}
-
-//VERIGICA SI SE MANDO EL FORMULARIO DE LOGIN
-if(!isset($_POST['email']))    
-    return;
-    //YA NO EJECURA LO SIGUIENTE
-
-
-
-include 'php/sql.php';
-//VERIFICO SI   UIERE ENTRAR COMO SUPERUSUARIO
-if($_POST['email'] == 'superusuario' && $_POST['password'] == '12345'){    
-    
-        $_SESSION['id']= 2;
-        $_SESSION['user']= "ADMINISTRADOR";
-        $_SESSION['email']= "ADMINISTRADOR";
-        $_SESSION['cargo']= "ADMINSITRADOR";
-        $_SESSION['status']= "activo";
-        $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
-        header ('Location: app/usuarios/');
-
-}
-
-
-$sql = "SELECT * FROM usuario WHERE correo = '". $_POST['email'] ."'";
-
-$res = $conn->query($sql);
-$obj = $res->fetch_object();
-
-//Si no hay coincidencias de correo hasta aqui ejecutas
-if($obj == false)    
-    return;
-
-if($obj->password ==  $_POST['password']){
-
-    if($obj->status == 'status') return;
-    $sql = "UPDATE `usuario` SET 
-        `fec_ingreso` = '" . date("Y-n-j") . "'
-        WHERE `usuario`.`id` = '" . $obj->id . "'";
-    
-        
-
-    $_SESSION['id']=$obj->id;
-    $_SESSION['user']=$obj->name;
-    $_SESSION['email']=$obj->correo;
-    $_SESSION['cargo']=$obj->cargo;
-    $_SESSION['status']= $obj->status;
-    $_SESSION["ultimoingreso"]= date("Y-n-j H:i:s");
-
-    if($obj->cargo == 'doctor')
-    header ('Location: app/usuarios');
-
-    else if($obj->cargo == 'paciente')
-    header ('Location: paciente/');
-
-  
-}
-?>

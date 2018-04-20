@@ -16,7 +16,7 @@
     ';
     require_once('PHPMailer/PHPMailerAutoload.php');
 
-    $mail = new PHPMailer();
+    $mail = new PHPMailer(true);
     $mail->CharSet = 'UTF-8';
     $mail->isSMTP();
     $mail->SMTPAuth = true;
